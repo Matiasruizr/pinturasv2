@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Materia prima:</strong>
+  <%= @materia_prima.materia_prima_id %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @materia_prima.descripcion %>
+</p>
+
+<p>
+  <strong>Marca:</strong>
+  <%= @materia_prima.marca %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @materia_prima.color %>
+</p>
+
+<p>
+  <strong>Gramo:</strong>
+  <%= @materia_prima.gramo %>
+</p>
+
+<p>
+  <strong>Categoria:</strong>
+  <%= @materia_prima.categoria %>
+</p>
+
+<p>
+  <strong>Cantidad:</strong>
+  <%= @materia_prima.cantidad %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @materia_prima.precio %>
+</p>
+
+<p>
+  <strong>Observaciones:</strong>
+  <%= @materia_prima.observaciones %>
+</p>
+
+<%= link_to 'Edit', edit_materia_prima_path(@materia_prima) %> |
+<%= link_to 'Back', materia_primas_path %>
