@@ -1,0 +1,102 @@
+<%= form_with(model: ot, local: true) do |form| %>
+  <% if ot.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ot.errors.count, "error") %> prohibited this ot from being saved:</h2>
+
+      <ul>
+      <% ot.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :pantonera %>
+    <%= form.text_field :pantonera %>
+  </div>
+
+  <div class="field">
+    <%= form.label :codigo %>
+    <%= form.text_field :codigo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :producto %>
+    <%= form.text_field :producto %>
+  </div>
+
+  <div class="field">
+    <%= form.label :formula_kg %>
+    <%= form.number_field :formula_kg %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cantidad_tineta %>
+    <%= form.text_field :cantidad_tineta %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_produccion %>
+    <%= form.date_select :fecha_produccion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :colorista_a_cargo %>
+    <%= form.text_field :colorista_a_cargo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :materia_prima_1 %>
+    <%= form.text_field :materia_prima_1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :materia_prima_2 %>
+    <%= form.text_field :materia_prima_2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :materia_prima_3 %>
+    <%= form.text_field :materia_prima_3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :materia_prima_4 %>
+    <%= form.text_field :materia_prima_4 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :materia_prima_5 %>
+    <%= form.text_field :materia_prima_5 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :materia_prima_6 %>
+    <%= form.text_field :materia_prima_6 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :materia_prima_7 %>
+    <%= form.text_field :materia_prima_7 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :materia_prima_8 %>
+    <%= form.text_field :materia_prima_8 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :materia_prima_9 %>
+    <%= form.text_field :materia_prima_9 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :materia_prima_10 %>
+    <%= form.text_field :materia_prima_10 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

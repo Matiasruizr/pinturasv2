@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_21_195249) do
+ActiveRecord::Schema.define(version: 2018_07_01_201309) do
 
   create_table "clientes", force: :cascade do |t|
     t.string "cliente_id"
@@ -36,6 +36,28 @@ ActiveRecord::Schema.define(version: 2018_06_21_195249) do
     t.integer "cantidad"
     t.integer "precio"
     t.string "observaciones"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ots", force: :cascade do |t|
+    t.string "pantonera"
+    t.string "codigo"
+    t.string "producto"
+    t.integer "formula_kg"
+    t.decimal "cantidad_tineta"
+    t.date "fecha_produccion"
+    t.string "colorista_a_cargo"
+    t.string "materia_prima_1"
+    t.string "materia_prima_2"
+    t.string "materia_prima_3"
+    t.string "materia_prima_4"
+    t.string "materia_prima_5"
+    t.string "materia_prima_6"
+    t.string "materia_prima_7"
+    t.string "materia_prima_8"
+    t.string "materia_prima_9"
+    t.string "materia_prima_10"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

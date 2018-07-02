@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :ots
   resources :clientes
   devise_for :users
   get 'inicio/inicio'
