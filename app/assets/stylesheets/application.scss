@@ -97,3 +97,55 @@ nav{
          }
      }
  }
+ .inicio{
+
+     img{
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        max-width: inherit;
+        left: 0;
+        top: 0;
+        opacity: 0.35;
+     }
+     article{
+         position: relative;
+         z-index: 2;
+         width: 100%;
+         float: left;
+         img{
+             position: relative!important;
+             max-width: 200px;
+             opacity: 1!important;
+             padding-bottom: 20px;
+         }
+         h2{
+             font-size: 18px;
+         }
+     }
+ }
+ .field{
+     padding:5px;
+     label{
+        min-width: 150px;
+        text-align: left;
+     }
+     input{
+         text-shadow: none;
+         
+     }
+ }
+
+ input[type=submit]{
+    background: #263238;
+    border: none;
+    padding: 7px 14px;
+    text-shadow: none;
+    color: white;
+    margin-top: 10px;
+ }
+ .new_user{
+     label{
+         min-width: inherit;
+     }
+ }
