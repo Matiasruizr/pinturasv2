@@ -1,0 +1,2 @@
+module FormulaPinturasHelper
+end

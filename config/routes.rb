@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :formula_pinturas
   resources :orden_trabajos
   resources :materias_primas
   get 'inventario/inventario'

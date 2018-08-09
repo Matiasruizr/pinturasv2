@@ -1,0 +1,235 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Formula Pinturas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dolar considerado</th>
+      <th>Formula kg</th>
+      <th>Codigo formula</th>
+      <th>Descripcion</th>
+      <th>Materia prima 1</th>
+      <th>Costo kg materia prima 1</th>
+      <th>Porcentaje materia prima 1</th>
+      <th>Kg materia prima 1</th>
+      <th>Costo total materia prima 1</th>
+      <th>Materia prima 2</th>
+      <th>Costo kg materia prima 2</th>
+      <th>Porcentaje materia prima 2</th>
+      <th>Kg materia prima 2</th>
+      <th>Costo total materia prima 2</th>
+      <th>Materia prima 3</th>
+      <th>Costo kg materia prima 3</th>
+      <th>Porcentaje materia prima 3</th>
+      <th>Kg materia prima 3</th>
+      <th>Costo total materia prima 3</th>
+      <th>Materia prima 4</th>
+      <th>Costo kg materia prima 4</th>
+      <th>Porcentaje materia prima 4</th>
+      <th>Kg materia prima 4</th>
+      <th>Costo total materia prima 4</th>
+      <th>Materia prima 5</th>
+      <th>Costo kg materia prima 5</th>
+      <th>Porcentaje materia prima 5</th>
+      <th>Kg materia prima 5</th>
+      <th>Costo total materia prima 5</th>
+      <th>Materia prima 6</th>
+      <th>Costo kg materia prima 6</th>
+      <th>Porcentaje materia prima 6</th>
+      <th>Kg materia prima 6</th>
+      <th>Costo total materia prima 6</th>
+      <th>Materia prima 7</th>
+      <th>Costo kg materia prima 7</th>
+      <th>Porcentaje materia prima 7</th>
+      <th>Kg materia prima 7</th>
+      <th>Costo total materia prima 7</th>
+      <th>Materia prima 8</th>
+      <th>Costo kg materia prima 8</th>
+      <th>Porcentaje materia prima 8</th>
+      <th>Kg materia prima 8</th>
+      <th>Costo total materia prima 8</th>
+      <th>Materia prima 9</th>
+      <th>Costo kg materia prima 9</th>
+      <th>Porcentaje materia prima 9</th>
+      <th>Kg materia prima 9</th>
+      <th>Costo total materia prima 9</th>
+      <th>Materia prima 10</th>
+      <th>Costo kg materia prima 10</th>
+      <th>Porcentaje materia prima 10</th>
+      <th>Kg materia prima 10</th>
+      <th>Costo total materia prima 10</th>
+      <th>Materia prima 11</th>
+      <th>Costo kg materia prima 11</th>
+      <th>Porcentaje materia prima 11</th>
+      <th>Kg materia prima 11</th>
+      <th>Costo total materia prima 11</th>
+      <th>Materia prima 12</th>
+      <th>Costo kg materia prima 12</th>
+      <th>Porcentaje materia prima 12</th>
+      <th>Kg materia prima 12</th>
+      <th>Costo total materia prima 12</th>
+      <th>Materia prima 13</th>
+      <th>Costo kg materia prima 13</th>
+      <th>Porcentaje materia prima 13</th>
+      <th>Kg materia prima 13</th>
+      <th>Costo total materia prima 13</th>
+      <th>Materia prima 14</th>
+      <th>Costo kg materia prima 14</th>
+      <th>Porcentaje materia prima 14</th>
+      <th>Kg materia prima 14</th>
+      <th>Costo total materia prima 14</th>
+      <th>Materia prima 15</th>
+      <th>Costo kg materia prima 15</th>
+      <th>Porcentaje materia prima 15</th>
+      <th>Kg materia prima 15</th>
+      <th>Costo total materia prima 15</th>
+      <th>Materia prima 16</th>
+      <th>Costo kg materia prima 16</th>
+      <th>Porcentaje materia prima 16</th>
+      <th>Kg materia prima 16</th>
+      <th>Costo total materia prima 16</th>
+      <th>Materia prima 17</th>
+      <th>Costo kg materia prima 17</th>
+      <th>Porcentaje materia prima 17</th>
+      <th>Kg materia prima 17</th>
+      <th>Costo total materia prima 17</th>
+      <th>Materia prima 18</th>
+      <th>Costo kg materia prima 18</th>
+      <th>Porcentaje materia prima 18</th>
+      <th>Kg materia prima 18</th>
+      <th>Costo total materia prima 18</th>
+      <th>Materia prima 19</th>
+      <th>Costo kg materia prima 19</th>
+      <th>Porcentaje materia prima 19</th>
+      <th>Kg materia prima 19</th>
+      <th>Costo total materia prima 19</th>
+      <th>Materia prima 20</th>
+      <th>Costo kg materia prima 20</th>
+      <th>Porcentaje materia prima 20</th>
+      <th>Kg materia prima 20</th>
+      <th>Costo total materia prima 20</th>
+      <th>Costo final kg</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @formula_pinturas.each do |formula_pintura| %>
+      <tr>
+        <td><%= formula_pintura.dolar_considerado %></td>
+        <td><%= formula_pintura.formula_kg %></td>
+        <td><%= formula_pintura.codigo_formula %></td>
+        <td><%= formula_pintura.descripcion %></td>
+        <td><%= formula_pintura.materia_prima_1 %></td>
+        <td><%= formula_pintura.costo_kg_materia_prima_1 %></td>
+        <td><%= formula_pintura.porcentaje_materia_prima_1 %></td>
+        <td><%= formula_pintura.kg_materia_prima_1 %></td>
+        <td><%= formula_pintura.costo_total_materia_prima_1 %></td>
+        <td><%= formula_pintura.materia_prima_2 %></td>
+        <td><%= formula_pintura.costo_kg_materia_prima_2 %></td>
+        <td><%= formula_pintura.porcentaje_materia_prima_2 %></td>
+        <td><%= formula_pintura.kg_materia_prima_2 %></td>
+        <td><%= formula_pintura.costo_total_materia_prima_2 %></td>
+        <td><%= formula_pintura.materia_prima_3 %></td>
+        <td><%= formula_pintura.costo_kg_materia_prima_3 %></td>
+        <td><%= formula_pintura.porcentaje_materia_prima_3 %></td>
+        <td><%= formula_pintura.kg_materia_prima_3 %></td>
+        <td><%= formula_pintura.costo_total_materia_prima_3 %></td>
+        <td><%= formula_pintura.materia_prima_4 %></td>
+        <td><%= formula_pintura.costo_kg_materia_prima_4 %></td>
+        <td><%= formula_pintura.porcentaje_materia_prima_4 %></td>
+        <td><%= formula_pintura.kg_materia_prima_4 %></td>
+        <td><%= formula_pintura.costo_total_materia_prima_4 %></td>
+        <td><%= formula_pintura.materia_prima_5 %></td>
+        <td><%= formula_pintura.costo_kg_materia_prima_5 %></td>
+        <td><%= formula_pintura.porcentaje_materia_prima_5 %></td>
+        <td><%= formula_pintura.kg_materia_prima_5 %></td>
+        <td><%= formula_pintura.costo_total_materia_prima_5 %></td>
+        <td><%= formula_pintura.materia_prima_6 %></td>
+        <td><%= formula_pintura.costo_kg_materia_prima_6 %></td>
+        <td><%= formula_pintura.porcentaje_materia_prima_6 %></td>
+        <td><%= formula_pintura.kg_materia_prima_6 %></td>
+        <td><%= formula_pintura.costo_total_materia_prima_6 %></td>
+        <td><%= formula_pintura.materia_prima_7 %></td>
+        <td><%= formula_pintura.costo_kg_materia_prima_7 %></td>
+        <td><%= formula_pintura.porcentaje_materia_prima_7 %></td>
+        <td><%= formula_pintura.kg_materia_prima_7 %></td>
+        <td><%= formula_pintura.costo_total_materia_prima_7 %></td>
+        <td><%= formula_pintura.materia_prima_8 %></td>
+        <td><%= formula_pintura.costo_kg_materia_prima_8 %></td>
+        <td><%= formula_pintura.porcentaje_materia_prima_8 %></td>
+        <td><%= formula_pintura.kg_materia_prima_8 %></td>
+        <td><%= formula_pintura.costo_total_materia_prima_8 %></td>
+        <td><%= formula_pintura.materia_prima_9 %></td>
+        <td><%= formula_pintura.costo_kg_materia_prima_9 %></td>
+        <td><%= formula_pintura.porcentaje_materia_prima_9 %></td>
+        <td><%= formula_pintura.kg_materia_prima_9 %></td>
+        <td><%= formula_pintura.costo_total_materia_prima_9 %></td>
+        <td><%= formula_pintura.materia_prima_10 %></td>
+        <td><%= formula_pintura.costo_kg_materia_prima_10 %></td>
+        <td><%= formula_pintura.porcentaje_materia_prima_10 %></td>
+        <td><%= formula_pintura.kg_materia_prima_10 %></td>
+        <td><%= formula_pintura.costo_total_materia_prima_10 %></td>
+        <td><%= formula_pintura.materia_prima_11 %></td>
+        <td><%= formula_pintura.costo_kg_materia_prima_11 %></td>
+        <td><%= formula_pintura.porcentaje_materia_prima_11 %></td>
+        <td><%= formula_pintura.kg_materia_prima_11 %></td>
+        <td><%= formula_pintura.costo_total_materia_prima_11 %></td>
+        <td><%= formula_pintura.materia_prima_12 %></td>
+        <td><%= formula_pintura.costo_kg_materia_prima_12 %></td>
+        <td><%= formula_pintura.porcentaje_materia_prima_12 %></td>
+        <td><%= formula_pintura.kg_materia_prima_12 %></td>
+        <td><%= formula_pintura.costo_total_materia_prima_12 %></td>
+        <td><%= formula_pintura.materia_prima_13 %></td>
+        <td><%= formula_pintura.costo_kg_materia_prima_13 %></td>
+        <td><%= formula_pintura.porcentaje_materia_prima_13 %></td>
+        <td><%= formula_pintura.kg_materia_prima_13 %></td>
+        <td><%= formula_pintura.costo_total_materia_prima_13 %></td>
+        <td><%= formula_pintura.materia_prima_14 %></td>
+        <td><%= formula_pintura.costo_kg_materia_prima_14 %></td>
+        <td><%= formula_pintura.porcentaje_materia_prima_14 %></td>
+        <td><%= formula_pintura.kg_materia_prima_14 %></td>
+        <td><%= formula_pintura.costo_total_materia_prima_14 %></td>
+        <td><%= formula_pintura.materia_prima_15 %></td>
+        <td><%= formula_pintura.costo_kg_materia_prima_15 %></td>
+        <td><%= formula_pintura.porcentaje_materia_prima_15 %></td>
+        <td><%= formula_pintura.kg_materia_prima_15 %></td>
+        <td><%= formula_pintura.costo_total_materia_prima_15 %></td>
+        <td><%= formula_pintura.materia_prima_16 %></td>
+        <td><%= formula_pintura.costo_kg_materia_prima_16 %></td>
+        <td><%= formula_pintura.porcentaje_materia_prima_16 %></td>
+        <td><%= formula_pintura.kg_materia_prima_16 %></td>
+        <td><%= formula_pintura.costo_total_materia_prima_16 %></td>
+        <td><%= formula_pintura.materia_prima_17 %></td>
+        <td><%= formula_pintura.costo_kg_materia_prima_17 %></td>
+        <td><%= formula_pintura.porcentaje_materia_prima_17 %></td>
+        <td><%= formula_pintura.kg_materia_prima_17 %></td>
+        <td><%= formula_pintura.costo_total_materia_prima_17 %></td>
+        <td><%= formula_pintura.materia_prima_18 %></td>
+        <td><%= formula_pintura.costo_kg_materia_prima_18 %></td>
+        <td><%= formula_pintura.porcentaje_materia_prima_18 %></td>
+        <td><%= formula_pintura.kg_materia_prima_18 %></td>
+        <td><%= formula_pintura.costo_total_materia_prima_18 %></td>
+        <td><%= formula_pintura.materia_prima_19 %></td>
+        <td><%= formula_pintura.costo_kg_materia_prima_19 %></td>
+        <td><%= formula_pintura.porcentaje_materia_prima_19 %></td>
+        <td><%= formula_pintura.kg_materia_prima_19 %></td>
+        <td><%= formula_pintura.costo_total_materia_prima_19 %></td>
+        <td><%= formula_pintura.materia_prima_20 %></td>
+        <td><%= formula_pintura.costo_kg_materia_prima_20 %></td>
+        <td><%= formula_pintura.porcentaje_materia_prima_20 %></td>
+        <td><%= formula_pintura.kg_materia_prima_20 %></td>
+        <td><%= formula_pintura.costo_total_materia_prima_20 %></td>
+        <td><%= formula_pintura.costo_final_kg %></td>
+        <td><%= link_to 'Show', formula_pintura %></td>
+        <td><%= link_to 'Edit', edit_formula_pintura_path(formula_pintura) %></td>
+        <td><%= link_to 'Destroy', formula_pintura, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Formula Pintura', new_formula_pintura_path %>

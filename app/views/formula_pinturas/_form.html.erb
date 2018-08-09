@@ -1,0 +1,562 @@
+<%= form_with(model: formula_pintura, local: true) do |form| %>
+  <% if formula_pintura.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(formula_pintura.errors.count, "error") %> prohibited this formula_pintura from being saved:</h2>
+
+      <ul>
+      <% formula_pintura.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :dolar_considerado %>
+    <%= form.text_field :dolar_considerado %>
+  </div>
+
+  <div class="field">
+    <%= form.label :formula_kg %>
+    <%= form.text_field :formula_kg %>
+  </div>
+
+  <div class="field">
+    <%= form.label :codigo_formula %>
+    <%= form.text_field :codigo_formula %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descripcion %>
+    <%= form.text_area :descripcion %>
+  </div>
+
+  <div class="materia_formula">
+    <div class="field">
+      <%= form.label :materia_prima_1 %>
+      <%= form.select(:materia_prima_1, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_kg_materia_prima_1 %>
+      <%= form.text_field :costo_kg_materia_prima_1 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :porcentaje_materia_prima_1 %>
+      <%= form.text_field :porcentaje_materia_prima_1 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :kg_materia_prima_1 %>
+      <%= form.text_field :kg_materia_prima_1 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_total_materia_prima_1 %>
+      <%= form.text_field :costo_total_materia_prima_1 %>
+    </div>
+  </div>
+    <div class="materia_formula">
+    <div class="field">
+      <%= form.label :materia_prima_2 %>
+      <%= form.select(:materia_prima_2, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_kg_materia_prima_2 %>
+      <%= form.text_field :costo_kg_materia_prima_2 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :porcentaje_materia_prima_2 %>
+      <%= form.text_field :porcentaje_materia_prima_2 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :kg_materia_prima_2 %>
+      <%= form.text_field :kg_materia_prima_2 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_total_materia_prima_2 %>
+      <%= form.text_field :costo_total_materia_prima_2 %>
+    </div>
+  </div>
+    <div class="materia_formula">
+    <div class="field">
+      <%= form.label :materia_prima_3 %>
+      <%= form.select(:materia_prima_3, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_kg_materia_prima_3 %>
+      <%= form.text_field :costo_kg_materia_prima_3 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :porcentaje_materia_prima_3 %>
+      <%= form.text_field :porcentaje_materia_prima_3 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :kg_materia_prima_3 %>
+      <%= form.text_field :kg_materia_prima_3 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_total_materia_prima_3 %>
+      <%= form.text_field :costo_total_materia_prima_3 %>
+    </div>
+  </div>
+    <div class="materia_formula">
+    <div class="field">
+      <%= form.label :materia_prima_4 %>
+      <%= form.select(:materia_prima_4, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_kg_materia_prima_4 %>
+      <%= form.text_field :costo_kg_materia_prima_4 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :porcentaje_materia_prima_4 %>
+      <%= form.text_field :porcentaje_materia_prima_4 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :kg_materia_prima_4 %>
+      <%= form.text_field :kg_materia_prima_4 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_total_materia_prima_4 %>
+      <%= form.text_field :costo_total_materia_prima_4 %>
+    </div>
+  </div>
+    <div class="materia_formula">
+    <div class="field">
+      <%= form.label :materia_prima_5 %>
+      <%= form.select(:materia_prima_5, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_kg_materia_prima_5 %>
+      <%= form.text_field :costo_kg_materia_prima_5 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :porcentaje_materia_prima_5 %>
+      <%= form.text_field :porcentaje_materia_prima_5 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :kg_materia_prima_5 %>
+      <%= form.text_field :kg_materia_prima_5 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_total_materia_prima_5 %>
+      <%= form.text_field :costo_total_materia_prima_5 %>
+    </div>
+  </div>
+    <div class="materia_formula">
+    <div class="field">
+      <%= form.label :materia_prima_6 %>
+      <%= form.select(:materia_prima_6, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_kg_materia_prima_6 %>
+      <%= form.text_field :costo_kg_materia_prima_6 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :porcentaje_materia_prima_6 %>
+      <%= form.text_field :porcentaje_materia_prima_6 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :kg_materia_prima_6 %>
+      <%= form.text_field :kg_materia_prima_6 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_total_materia_prima_6 %>
+      <%= form.text_field :costo_total_materia_prima_6 %>
+    </div>
+  </div>
+    <div class="materia_formula">
+    <div class="field">
+      <%= form.label :materia_prima_7 %>
+      <%= form.select(:materia_prima_7, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_kg_materia_prima_7 %>
+      <%= form.text_field :costo_kg_materia_prima_7 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :porcentaje_materia_prima_7 %>
+      <%= form.text_field :porcentaje_materia_prima_7 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :kg_materia_prima_7 %>
+      <%= form.text_field :kg_materia_prima_7 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_total_materia_prima_7 %>
+      <%= form.text_field :costo_total_materia_prima_7 %>
+    </div>
+  </div>
+    <div class="materia_formula">
+    <div class="field">
+      <%= form.label :materia_prima_8 %>
+      <%= form.select(:materia_prima_8, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_kg_materia_prima_8 %>
+      <%= form.text_field :costo_kg_materia_prima_8 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :porcentaje_materia_prima_8 %>
+      <%= form.text_field :porcentaje_materia_prima_8 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :kg_materia_prima_8 %>
+      <%= form.text_field :kg_materia_prima_8 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_total_materia_prima_8 %>
+      <%= form.text_field :costo_total_materia_prima_8 %>
+    </div>
+  </div>
+    <div class="materia_formula">
+    <div class="field">
+      <%= form.label :materia_prima_9 %>
+      <%= form.select(:materia_prima_9, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_kg_materia_prima_9 %>
+      <%= form.text_field :costo_kg_materia_prima_9 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :porcentaje_materia_prima_9 %>
+      <%= form.text_field :porcentaje_materia_prima_9 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :kg_materia_prima_9 %>
+      <%= form.text_field :kg_materia_prima_9 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_total_materia_prima_9 %>
+      <%= form.text_field :costo_total_materia_prima_9 %>
+    </div>
+  </div>
+    <div class="materia_formula">
+    <div class="field">
+      <%= form.label :materia_prima_10 %>
+      <%= form.select(:materia_prima_10, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_kg_materia_prima_10 %>
+      <%= form.text_field :costo_kg_materia_prima_10 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :porcentaje_materia_prima_10 %>
+      <%= form.text_field :porcentaje_materia_prima_10 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :kg_materia_prima_10 %>
+      <%= form.text_field :kg_materia_prima_10 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_total_materia_prima_10 %>
+      <%= form.text_field :costo_total_materia_prima_10 %>
+    </div>
+  </div>
+    <div class="materia_formula">
+    <div class="field">
+      <%= form.label :materia_prima_11 %>
+      <%= form.select(:materia_prima_11, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_kg_materia_prima_11 %>
+      <%= form.text_field :costo_kg_materia_prima_11 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :porcentaje_materia_prima_11 %>
+      <%= form.text_field :porcentaje_materia_prima_11 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :kg_materia_prima_11 %>
+      <%= form.text_field :kg_materia_prima_11 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_total_materia_prima_11 %>
+      <%= form.text_field :costo_total_materia_prima_11 %>
+    </div>
+  </div>
+    <div class="materia_formula">
+    <div class="field">
+      <%= form.label :materia_prima_12 %>
+      <%= form.select(:materia_prima_12, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_kg_materia_prima_12 %>
+      <%= form.text_field :costo_kg_materia_prima_12 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :porcentaje_materia_prima_12 %>
+      <%= form.text_field :porcentaje_materia_prima_12 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :kg_materia_prima_12 %>
+      <%= form.text_field :kg_materia_prima_12 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_total_materia_prima_12 %>
+      <%= form.text_field :costo_total_materia_prima_12 %>
+    </div>
+  </div>
+    <div class="materia_formula">
+    <div class="field">
+      <%= form.label :materia_prima_13 %>
+      <%= form.select(:materia_prima_13, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_kg_materia_prima_13 %>
+      <%= form.text_field :costo_kg_materia_prima_13 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :porcentaje_materia_prima_13 %>
+      <%= form.text_field :porcentaje_materia_prima_13 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :kg_materia_prima_13 %>
+      <%= form.text_field :kg_materia_prima_13 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_total_materia_prima_13 %>
+      <%= form.text_field :costo_total_materia_prima_13 %>
+    </div>
+  </div>
+    <div class="materia_formula">
+    <div class="field">
+      <%= form.label :materia_prima_14 %>
+      <%= form.select(:materia_prima_14, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_kg_materia_prima_14 %>
+      <%= form.text_field :costo_kg_materia_prima_14 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :porcentaje_materia_prima_14 %>
+      <%= form.text_field :porcentaje_materia_prima_14 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :kg_materia_prima_14 %>
+      <%= form.text_field :kg_materia_prima_14 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_total_materia_prima_14 %>
+      <%= form.text_field :costo_total_materia_prima_14 %>
+    </div>
+  </div>
+    <div class="materia_formula">
+    <div class="field">
+      <%= form.label :materia_prima_15 %>
+      <%= form.select(:materia_prima_15, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_kg_materia_prima_15 %>
+      <%= form.text_field :costo_kg_materia_prima_15 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :porcentaje_materia_prima_15 %>
+      <%= form.text_field :porcentaje_materia_prima_15 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :kg_materia_prima_15 %>
+      <%= form.text_field :kg_materia_prima_15 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_total_materia_prima_15 %>
+      <%= form.text_field :costo_total_materia_prima_15 %>
+    </div>
+  </div>
+    <div class="materia_formula">
+    <div class="field">
+      <%= form.label :materia_prima_16 %>
+      <%= form.select(:materia_prima_16, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_kg_materia_prima_16 %>
+      <%= form.text_field :costo_kg_materia_prima_16 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :porcentaje_materia_prima_16 %>
+      <%= form.text_field :porcentaje_materia_prima_16 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :kg_materia_prima_16 %>
+      <%= form.text_field :kg_materia_prima_16 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_total_materia_prima_16 %>
+      <%= form.text_field :costo_total_materia_prima_16 %>
+    </div>
+  </div>
+    <div class="materia_formula">
+    <div class="field">
+      <%= form.label :materia_prima_17 %>
+      <%= form.select(:materia_prima_17, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_kg_materia_prima_17 %>
+      <%= form.text_field :costo_kg_materia_prima_17 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :porcentaje_materia_prima_17 %>
+      <%= form.text_field :porcentaje_materia_prima_17 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :kg_materia_prima_17 %>
+      <%= form.text_field :kg_materia_prima_17 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_total_materia_prima_17 %>
+      <%= form.text_field :costo_total_materia_prima_17 %>
+    </div>
+  </div>
+    <div class="materia_formula">
+    <div class="field">
+      <%= form.label :materia_prima_18 %>
+      <%= form.select(:materia_prima_18, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_kg_materia_prima_18 %>
+      <%= form.text_field :costo_kg_materia_prima_18 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :porcentaje_materia_prima_18 %>
+      <%= form.text_field :porcentaje_materia_prima_18 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :kg_materia_prima_18 %>
+      <%= form.text_field :kg_materia_prima_18 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_total_materia_prima_18 %>
+      <%= form.text_field :costo_total_materia_prima_18 %>
+    </div>
+  </div>
+    <div class="materia_formula">
+    <div class="field">
+      <%= form.label :materia_prima_19 %>
+      <%= form.select(:materia_prima_19, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_kg_materia_prima_19 %>
+      <%= form.text_field :costo_kg_materia_prima_19 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :porcentaje_materia_prima_19 %>
+      <%= form.text_field :porcentaje_materia_prima_19 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :kg_materia_prima_19 %>
+      <%= form.text_field :kg_materia_prima_19 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_total_materia_prima_19 %>
+      <%= form.text_field :costo_total_materia_prima_19 %>
+    </div>
+  </div>
+    <div class="materia_formula">
+    <div class="field">
+      <%= form.label :materia_prima_20 %>
+      <%= form.select(:materia_prima_20, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_kg_materia_prima_20 %>
+      <%= form.text_field :costo_kg_materia_prima_20 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :porcentaje_materia_prima_20 %>
+      <%= form.text_field :porcentaje_materia_prima_20 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :kg_materia_prima_20 %>
+      <%= form.text_field :kg_materia_prima_20 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :costo_total_materia_prima_20 %>
+      <%= form.text_field :costo_total_materia_prima_20 %>
+    </div>
+  </div>
+  <div class="field">
+    <%= form.label :costo_final_kg %>
+    <%= form.text_field :costo_final_kg %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
