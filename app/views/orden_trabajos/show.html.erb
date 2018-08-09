@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pantonera:</strong>
+  <%= @orden_trabajo.pantonera %>
+</p>
+
+<p>
+  <strong>Cliente:</strong>
+  <%= @orden_trabajo.cliente %>
+</p>
+
+<p>
+  <strong>Orden de compra:</strong>
+  <%= @orden_trabajo.orden_de_compra %>
+</p>
+
+<p>
+  <strong>Producto:</strong>
+  <%= @orden_trabajo.producto %>
+</p>
+
+<p>
+  <strong>Grano:</strong>
+  <%= @orden_trabajo.grano %>
+</p>
+
+<p>
+  <strong>Formula kilos:</strong>
+  <%= @orden_trabajo.formula_kilos %>
+</p>
+
+<p>
+  <strong>Tinetas:</strong>
+  <%= @orden_trabajo.tinetas %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @orden_trabajo.fecha %>
+</p>
+
+<p>
+  <strong>Muestra color:</strong>
+  <%= @orden_trabajo.muestra_color %>
+</p>
+
+<p>
+  <strong>Colorista a cargo:</strong>
+  <%= @orden_trabajo.colorista_a_cargo %>
+</p>
+
+<%= link_to 'Edit', edit_orden_trabajo_path(@orden_trabajo) %> |
+<%= link_to 'Back', orden_trabajos_path %>

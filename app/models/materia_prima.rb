@@ -1,2 +1,0 @@
-class MateriaPrima < ApplicationRecord
-end

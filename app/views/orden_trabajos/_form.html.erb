@@ -1,0 +1,59 @@
+<%= form_with(model: orden_trabajo, local: true) do |form| %>
+  <% if orden_trabajo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(orden_trabajo.errors.count, "error") %> prohibited this orden_trabajo from being saved:</h2>
+
+      <ul>
+      <% orden_trabajo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :pantonera %>
+    <%= form.text_field :pantonera %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cliente %>
+
+    <%= form.select(:cliente, Cliente.all.collect {|c| [ c.cliente_id, c.cliente_id ] } ) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :orden_de_compra %>
+    <%= form.text_field :orden_de_compra %>
+  </div>
+
+  <div class="field">
+    <%= form.label :producto %>
+    <%= form.text_field :producto %>
+  </div>
+
+  <div class="field">
+    <%= form.label :grano %>
+   <%= form.select(:grano,  options_for_select(  [['Extra fino', 'Extra fino '], ['Fino', 'Fino'], ['Medio', 'Medio'], ['Grueso', 'Grueso'], ['No aplica', 'No aplica'] ]  )) %>
+   
+  </div>
+
+  <div class="field">
+    <%= form.label :formula_kilos %>
+    <%= form.text_field :formula_kilos %>
+  </div>
+
+  <div class="field">
+    <%= form.label :muestra_color %>
+    <%= form.check_box :muestra_color %>
+  </div>
+
+  <div class="field">
+    <%= form.label :colorista_a_cargo %>
+    <%= form.text_field :colorista_a_cargo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

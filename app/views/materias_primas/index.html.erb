@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Materias Primas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Marca</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @materias_primas.each do |materias_prima| %>
+      <tr>
+        <td><%= materias_prima.nombre %></td>
+        <td><%= materias_prima.descripcion %></td>
+        <td><%= materias_prima.marca %></td>
+        <td><%= materias_prima.cantidad %></td>
+        <td><%= materias_prima.precio %></td>
+        <td><%= link_to 'Show', materias_prima %></td>
+        <td><%= link_to 'Edit', edit_materias_prima_path(materias_prima) %></td>
+        <td><%= link_to 'Destroy', materias_prima, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Materias Prima', new_materias_prima_path %>

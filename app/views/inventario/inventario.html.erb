@@ -1,0 +1,44 @@
+<h1>Inventario#inventario</h1>
+<p>Find me in app/views/inventario/inventario.html.erb</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Materia prima</th>
+      <th>Descripcion</th>
+      <th>Marca</th>
+      <th>Color</th>
+      <th>Gramo</th>
+      <th>Categoria</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+      <th>Observaciones</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @materia_primas.each do |materia_prima| %>
+      <tr>
+        <td><%= materia_prima.materia_prima_id %></td>
+        <td><%= materia_prima.descripcion %></td>
+        <td><%= materia_prima.marca %></td>
+        <td><%= materia_prima.color %></td>
+        <td><%= materia_prima.gramo %></td>
+        <td><%= materia_prima.categoria %></td>
+        <td><%= materia_prima.cantidad %></td>
+        <td><%= materia_prima.precio %></td>
+        <td><%= materia_prima.observaciones %></td>
+        <td><%= link_to 'Show', materia_prima %></td>
+        <td><%= link_to 'Edit', edit_materia_prima_path(materia_prima) %></td>
+        <td><%= link_to 'Destroy', materia_prima, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
+
+<%  @menor_stock.each do |ms|  %> 
+    <h3> <%= ms.descripcion %></h3>
+<% end %> 

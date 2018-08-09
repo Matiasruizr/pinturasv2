@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Orden Trabajos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pantonera</th>
+      <th>Cliente</th>
+      <th>Orden de compra</th>
+      <th>Producto</th>
+      <th>Grano</th>
+      <th>Formula kilos</th>
+      <th>Tinetas</th>
+      <th>Fecha</th>
+      <th>Muestra color</th>
+      <th>Colorista a cargo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orden_trabajos.each do |orden_trabajo| %>
+      <tr>
+        <td><%= orden_trabajo.pantonera %></td>
+        <td><%= orden_trabajo.cliente %></td>
+        <td><%= orden_trabajo.orden_de_compra %></td>
+        <td><%= orden_trabajo.producto %></td>
+        <td><%= orden_trabajo.grano %></td>
+        <td><%= orden_trabajo.formula_kilos %></td>
+        <td><%= orden_trabajo.tinetas %></td>
+        <td><%= orden_trabajo.fecha %></td>
+        <td><%= orden_trabajo.muestra_color %></td>
+        <td><%= orden_trabajo.colorista_a_cargo %></td>
+        <td><%= link_to 'Show', orden_trabajo %></td>
+        <td><%= link_to 'Edit', edit_orden_trabajo_path(orden_trabajo) %></td>
+        <td><%= link_to 'Destroy', orden_trabajo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Orden Trabajo', new_orden_trabajo_path %>

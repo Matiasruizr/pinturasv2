@@ -1,2 +1,0 @@
-module MateriaPrimasHelper
-end

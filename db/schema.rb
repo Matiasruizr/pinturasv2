@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_01_201309) do
+ActiveRecord::Schema.define(version: 2018_08_08_220544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,11 @@ ActiveRecord::Schema.define(version: 2018_07_01_201309) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "inventarios", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "materia_primas", force: :cascade do |t|
     t.string "materia_prima_id"
     t.string "descripcion"
@@ -39,6 +44,150 @@ ActiveRecord::Schema.define(version: 2018_07_01_201309) do
     t.integer "cantidad"
     t.integer "precio"
     t.string "observaciones"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "materias_primas", force: :cascade do |t|
+    t.string "nombre"
+    t.string "descripcion"
+    t.string "marca"
+    t.float "cantidad"
+    t.float "precio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orden_de_trabajos", force: :cascade do |t|
+    t.string "pantonera"
+    t.string "codigo"
+    t.string "producto"
+    t.date "fecha_produccion"
+    t.string "colorista_a_cargo"
+    t.string "materia_prima_1"
+    t.integer "materia_prima_1_kg"
+    t.float "materia_prima_1_porcentaje"
+    t.string "materia_prima_2"
+    t.integer "materia_prima_2_kg"
+    t.float "materia_prima_2_porcentaje"
+    t.string "materia_prima_3"
+    t.integer "materia_prima_3_kg"
+    t.float "materia_prima_3_porcentaje"
+    t.string "materia_prima_4"
+    t.integer "materia_prima_4_kg"
+    t.float "materia_prima_4_porcentaje"
+    t.string "materia_prima_5"
+    t.integer "materia_prima_5_kg"
+    t.float "materia_prima_5_porcentaje"
+    t.string "materia_prima_6"
+    t.integer "materia_prima_6_kg"
+    t.float "materia_prima_6_porcentaje"
+    t.string "materia_prima_7"
+    t.integer "materia_prima_7_kg"
+    t.float "materia_prima_7_porcentaje"
+    t.string "materia_prima_8"
+    t.integer "materia_prima_8_kg"
+    t.float "materia_prima_8_porcentaje"
+    t.string "materia_prima_9"
+    t.integer "materia_prima_9_kg"
+    t.float "materia_prima_9_porcentaje"
+    t.string "materia_prima_10"
+    t.integer "materia_prima_10_kg"
+    t.float "materia_prima_10_porcentaje"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orden_trabajos", force: :cascade do |t|
+    t.string "pantonera"
+    t.string "cliente"
+    t.string "orden_de_compra"
+    t.string "producto"
+    t.string "grano"
+    t.float "formula_kilos"
+    t.float "tinetas"
+    t.date "fecha"
+    t.boolean "muestra_color"
+    t.string "colorista_a_cargo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ordenes_de_trabajos", force: :cascade do |t|
+    t.string "pantonera"
+    t.string "codigo"
+    t.string "producto"
+    t.date "fecha_produccion"
+    t.string "colorista_a_cargo"
+    t.string "materia_prima_1_porcentaje"
+    t.integer "materia_prima_1_kg"
+    t.float "materia_prima_1"
+    t.string "materia_prima_2"
+    t.integer "materia_prima_2_kg"
+    t.float "materia_prima_2_porcentaje"
+    t.string "materia_prima_3"
+    t.integer "materia_prima_3_kg"
+    t.float "materia_prima_3_porcentaje"
+    t.string "materia_prima_4"
+    t.integer "materia_prima_4_kg"
+    t.float "materia_prima_4_porcentaje"
+    t.string "materia_prima_5"
+    t.integer "materia_prima_5_kg"
+    t.float "materia_prima_5_porcentaje"
+    t.string "materia_prima_6"
+    t.integer "materia_prima_6_kg"
+    t.float "materia_prima_6_porcentaje"
+    t.string "materia_prima_7"
+    t.integer "materia_prima_7_kg"
+    t.float "materia_prima_7_porcentaje"
+    t.string "materia_prima_8"
+    t.integer "materia_prima_8_kg"
+    t.float "materia_prima_8_porcentaje"
+    t.string "materia_prima_9"
+    t.integer "materia_prima_9_kg"
+    t.float "materia_prima_9_porcentaje"
+    t.string "materia_prima_10"
+    t.integer "materia_prima_10_kg"
+    t.float "materia_prima_10_porcentaje"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ordenes_trabajos", force: :cascade do |t|
+    t.string "pantonera"
+    t.string "codigo"
+    t.string "producto"
+    t.date "fecha_produccion"
+    t.string "colorista_a_cargo"
+    t.float "materia_prima_1"
+    t.integer "materia_prima_1_kg"
+    t.string "materia_prima_2"
+    t.integer "materia_prima_2_kg"
+    t.float "materia_prima_2_porcentaje"
+    t.string "materia_prima_3"
+    t.integer "materia_prima_3_kg"
+    t.float "materia_prima_3_porcentaje"
+    t.string "materia_prima_4"
+    t.integer "materia_prima_4_kg"
+    t.float "materia_prima_4_porcentaje"
+    t.string "materia_prima_5"
+    t.integer "materia_prima_5_kg"
+    t.float "materia_prima_5_porcentaje"
+    t.string "materia_prima_6"
+    t.integer "materia_prima_6_kg"
+    t.float "materia_prima_6_porcentaje"
+    t.string "materia_prima_7"
+    t.integer "materia_prima_7_kg"
+    t.float "materia_prima_7_porcentaje"
+    t.string "materia_prima_8"
+    t.integer "materia_prima_8_kg"
+    t.float "materia_prima_8_porcentaje"
+    t.string "materia_prima_9"
+    t.integer "materia_prima_9_kg"
+    t.float "materia_prima_9_porcentaje"
+    t.string "materia_prima_10"
+    t.integer "materia_prima_10_kg"
+    t.float "materia_prima_10_porcentaje"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -63,6 +212,26 @@ ActiveRecord::Schema.define(version: 2018_07_01_201309) do
     t.string "materia_prima_10"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "materia_prima_1_kg"
+    t.float "materia_prima_1_porcentaje"
+    t.integer "materia_prima_2_kg"
+    t.float "materia_prima_2_porcentaje"
+    t.integer "materia_prima_3_kg"
+    t.float "materia_prima_3_porcentaje"
+    t.integer "materia_prima_4_kg"
+    t.float "materia_prima_4_porcentaje"
+    t.integer "materia_prima_5_kg"
+    t.float "materia_prima_5_porcentaje"
+    t.integer "materia_prima_6_kg"
+    t.float "materia_prima_6_porcentaje"
+    t.integer "materia_prima_7_kg"
+    t.float "materia_prima_7_porcentaje"
+    t.integer "materia_prima_8_kg"
+    t.float "materia_prima_8_porcentaje"
+    t.integer "materia_prima_9_kg"
+    t.float "materia_prima_9_porcentaje"
+    t.integer "materia_prima_10_kg"
+    t.float "materia_prima_10_porcentaje"
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,0 +1,3 @@
+class MateriasPrima < ApplicationRecord
+    
+end

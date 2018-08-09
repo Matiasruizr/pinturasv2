@@ -35,19 +35,23 @@
                   
                     <li>
                     <i class="fas fa-briefcase"></i>
-                        <%= link_to "Ordenes de trabajo" , ots_path %>
+                        <%= link_to "Ordenes de trabajo" , orden_trabajos_path %>
                     </li>
                          <li class="subitem_menu">
                             <i class="fas fa-plus"></i>
-                            <%= link_to "Agregar" , new_ot_path %>
+                            <%= link_to "Agregar" , new_orden_trabajo_path %>
                         </li>
                     <li>
                         <i class="fas fa-paint-roller"></i>
-                        <%= link_to "Materias" , materia_primas_path %>
+                        <%= link_to "Inventario" , inventario_inventario_path %>
                     </li>
+                         <li  class="subitem_menu">
+                            <i class="fas fa-paint-roller"></i>
+                            <%= link_to "Materias" , materias_primas_path %>
+                        </li>
                         <li class="subitem_menu">
                             <i class="fas fa-plus"></i>
-                            <%= link_to "Agregar" , new_materia_prima_path %>
+                            <%= link_to "Agregar" , new_materias_prima_path %>
                         </li>
                     <li>
                         <i class="fas fa-user"></i>

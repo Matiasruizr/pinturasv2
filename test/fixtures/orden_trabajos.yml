@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pantonera: MyString
+  cliente: MyString
+  orden_de_compra: MyString
+  producto: MyString
+  grano: MyString
+  formula_kilos: 1.5
+  tinetas: 1.5
+  fecha: 2018-08-08
+  muestra_color: false
+  colorista_a_cargo: MyString
+
+two:
+  pantonera: MyString
+  cliente: MyString
+  orden_de_compra: MyString
+  producto: MyString
+  grano: MyString
+  formula_kilos: 1.5
+  tinetas: 1.5
+  fecha: 2018-08-08
+  muestra_color: false
+  colorista_a_cargo: MyString
