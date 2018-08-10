@@ -29,7 +29,7 @@
 
   <div class="field">
     <%= form.label :producto %>
-    <%= form.text_field :producto %>
+    <%= form.select(:producto, FormulaPintura.all.collect {|f| [ f.descripcion, f.descripcion ] } ) %>
   </div>
 
   <div class="field">

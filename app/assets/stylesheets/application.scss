@@ -131,8 +131,15 @@ nav{
         text-align: left;
      }
      input{
-         text-shadow: none;
+        text-shadow: none;
+       
+        border: 1px solid gray;
+     }
+     select{
+         padding: 2px;
          
+         border: 1px solid gray;
+         background: white;
      }
  }
 
@@ -147,5 +154,22 @@ nav{
  .new_user{
      label{
          min-width: inherit;
+     }
+ }
+
+ .materia_formula{
+     .field{
+         width: 20%;
+         float: left;
+         label{
+             text-overflow: ellipsis;
+             height: 25px;
+             overflow: hidden;
+             white-space:nowrap
+         }
+         input, select{
+            width: 90%;
+            margin: 0 5%;
+         }
      }
  }

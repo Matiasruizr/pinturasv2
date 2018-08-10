@@ -28,6 +28,20 @@ class OrdenTrabajosController < ApplicationController
   def actualiza_fecha!
     @orden_trabajo.fecha = Time.now
   end
+
+  def actualiza_materias!
+    @formula = FormulaPintura.where( descripcion: @orden_trabajo.producto).first
+    @materia =  MateriasPrima.where( nombre:  @formula.materia_prima_1.to_s ).first
+
+
+    nueva_cantidad =     @materia.cantidad -=  @formula.kg_materia_prima_1.to_i 
+    @materia.update(cantidad: nueva_cantidad)
+   
+ 
+
+
+  end
+
   # POST /orden_trabajos
   # POST /orden_trabajos.json
   def create
@@ -35,7 +49,8 @@ class OrdenTrabajosController < ApplicationController
     
     calcula_tinetas!
     actualiza_fecha!
-    
+    actualiza_materias!
+
     respond_to do |format|
       if @orden_trabajo.save
         format.html { redirect_to @orden_trabajo, notice: 'La orden de trabajo se creo correctamente.' }
