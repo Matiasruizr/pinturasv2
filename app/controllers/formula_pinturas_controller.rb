@@ -21,10 +21,73 @@ class FormulaPinturasController < ApplicationController
   def edit
   end
 
+  def costo_total_materia_prima!
+    @formula_pintura.costo_total_materia_prima_1 =  @formula_pintura.costo_kg_materia_prima_1.to_f *  @formula_pintura.kg_materia_prima_1.to_f
+    if @formula_pintura.costo_kg_materia_prima_2.present?
+      @formula_pintura.costo_total_materia_prima_2 =  @formula_pintura.costo_kg_materia_prima_2.to_f *  @formula_pintura.kg_materia_prima_2.to_f
+    end
+    if @formula_pintura.costo_kg_materia_prima_3.present?
+      @formula_pintura.costo_total_materia_prima_3 =  @formula_pintura.costo_kg_materia_prima_3.to_f *  @formula_pintura.kg_materia_prima_3.to_f
+    end
+    if @formula_pintura.costo_kg_materia_prima_4.present?
+      @formula_pintura.costo_total_materia_prima_4 =  @formula_pintura.costo_kg_materia_prima_4.to_f *  @formula_pintura.kg_materia_prima_4.to_f
+    end
+    if @formula_pintura.costo_kg_materia_prima_5.present?
+      @formula_pintura.costo_total_materia_prima_5 =  @formula_pintura.costo_kg_materia_prima_5.to_f *  @formula_pintura.kg_materia_prima_5.to_f
+    end
+    if @formula_pintura.costo_kg_materia_prima_6.present?
+      @formula_pintura.costo_total_materia_prima_6 =  @formula_pintura.costo_kg_materia_prima_6.to_f *  @formula_pintura.kg_materia_prima_6.to_f
+    end
+    if @formula_pintura.costo_kg_materia_prima_7.present?
+      @formula_pintura.costo_total_materia_prima_7 =  @formula_pintura.costo_kg_materia_prima_7.to_f *  @formula_pintura.kg_materia_prima_7.to_f
+    end
+    if @formula_pintura.costo_kg_materia_prima_8.present?
+      @formula_pintura.costo_total_materia_prima_8 =  @formula_pintura.costo_kg_materia_prima_8.to_f *  @formula_pintura.kg_materia_prima_8.to_f
+    end
+    if @formula_pintura.costo_kg_materia_prima_9.present?
+      @formula_pintura.costo_total_materia_prima_9 =  @formula_pintura.costo_kg_materia_prima_9.to_f *  @formula_pintura.kg_materia_prima_9.to_f
+    end
+    if @formula_pintura.costo_kg_materia_prima_10.present?
+      @formula_pintura.costo_total_materia_prima_10 =  @formula_pintura.costo_kg_materia_prima_10.to_f *  @formula_pintura.kg_materia_prima_10.to_f
+    end
+    if @formula_pintura.costo_kg_materia_prima_11.present?
+      @formula_pintura.costo_total_materia_prima_11 =  @formula_pintura.costo_kg_materia_prima_11.to_f *  @formula_pintura.kg_materia_prima_11.to_f
+    end
+    if @formula_pintura.costo_kg_materia_prima_12.present?
+      @formula_pintura.costo_total_materia_prima_12 =  @formula_pintura.costo_kg_materia_prima_12.to_f *  @formula_pintura.kg_materia_prima_12.to_f
+    end
+    if @formula_pintura.costo_kg_materia_prima_13.present?
+      @formula_pintura.costo_total_materia_prima_13 =  @formula_pintura.costo_kg_materia_prima_13.to_f *  @formula_pintura.kg_materia_prima_13.to_f
+    end
+    if @formula_pintura.costo_kg_materia_prima_14.present?
+      @formula_pintura.costo_total_materia_prima_14 =  @formula_pintura.costo_kg_materia_prima_14.to_f *  @formula_pintura.kg_materia_prima_14.to_f
+    end
+    if @formula_pintura.costo_kg_materia_prima_15.present?
+      @formula_pintura.costo_total_materia_prima_15 =  @formula_pintura.costo_kg_materia_prima_15.to_f *  @formula_pintura.kg_materia_prima_15.to_f
+    end
+    if @formula_pintura.costo_kg_materia_prima_16.present?
+      @formula_pintura.costo_total_materia_prima_16 =  @formula_pintura.costo_kg_materia_prima_16.to_f *  @formula_pintura.kg_materia_prima_16.to_f
+    end
+    if @formula_pintura.costo_kg_materia_prima_17.present?
+      @formula_pintura.costo_total_materia_prima_17 =  @formula_pintura.costo_kg_materia_prima_17.to_f *  @formula_pintura.kg_materia_prima_17.to_f
+    end
+    if @formula_pintura.costo_kg_materia_prima_18.present?
+      @formula_pintura.costo_total_materia_prima_18 =  @formula_pintura.costo_kg_materia_prima_18.to_f *  @formula_pintura.kg_materia_prima_18.to_f
+    end
+    if @formula_pintura.costo_kg_materia_prima_19.present?
+      @formula_pintura.costo_total_materia_prima_19 =  @formula_pintura.costo_kg_materia_prima_19.to_f *  @formula_pintura.kg_materia_prima_19.to_f
+    end
+    if @formula_pintura.costo_kg_materia_prima_20.present?
+      @formula_pintura.costo_total_materia_prima_20 =  @formula_pintura.costo_kg_materia_prima_20.to_f *  @formula_pintura.kg_materia_prima_20.to_f
+    end
+  end
+
   # POST /formula_pinturas
   # POST /formula_pinturas.json
   def create
     @formula_pintura = FormulaPintura.new(formula_pintura_params)
+
+     costo_total_materia_prima!
 
     respond_to do |format|
       if @formula_pintura.save
@@ -40,8 +103,11 @@ class FormulaPinturasController < ApplicationController
   # PATCH/PUT /formula_pinturas/1
   # PATCH/PUT /formula_pinturas/1.json
   def update
+
     respond_to do |format|
       if @formula_pintura.update(formula_pintura_params)
+
+        
         format.html { redirect_to @formula_pintura, notice: 'Formula pintura was successfully updated.' }
         format.json { render :show, status: :ok, location: @formula_pintura }
       else
