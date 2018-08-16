@@ -61,10 +61,26 @@ class MateriasPrimasController < ApplicationController
     end
   end
 
+  def agregar
+    @materia =  MateriasPrima.where( nombre: params[:nombre] ).first
+    @nueva_cantidad = @materia.cantidad.to_f + params[:cantidad].to_f
+    @materia.update(cantidad: @nueva_cantidad)
+   # Falta el mensaje de exito
+    respond_to do |format|
+      format.html { redirect_to @materia, notice: "Se agrego #{params[:cantidad]} de cantidad a la materia  #{params[:nombre]}" }
+      format.json { render :show, status: :created, location: @materia }
+    end
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_materias_prima
+      if params[:id] == "agregar"
+        render 'agregar'
+      else
       @materias_prima = MateriasPrima.find(params[:id])
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

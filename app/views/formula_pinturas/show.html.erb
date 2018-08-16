@@ -29,7 +29,7 @@
   <div class="materia_formula_show">
     <div class="field">
       <%= form.label :materia_prima_1 %>
-      <%= form.select(:materia_prima_1, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+      <%= form.select(:materia_prima_1, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] }) %>
     </div>
 
     <div class="field">

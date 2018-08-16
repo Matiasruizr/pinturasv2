@@ -1,0 +1,17 @@
+<%= form_with(model: materias_prima, local: true) do |form| %>
+
+     <div class="field">
+        <%= form.label :nombre %>
+         <%= form.select(:nombre, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] }  ) %>
+    </div>
+
+    <div class="field">
+        <%= form.label :cantidad %> (Kilos)
+        <%= form.text_field :cantidad %>
+    </div>
+
+
+    <div class="actions">
+        <%= form.submit %>
+    </div>
+<% end %>

@@ -1,6 +1,10 @@
 class OrdenTrabajosController < ApplicationController
   before_action :set_orden_trabajo, only: [:show, :edit, :update, :destroy]
 
+
+
+
+
   # GET /orden_trabajos
   # GET /orden_trabajos.json
   def index
@@ -35,100 +39,211 @@ class OrdenTrabajosController < ApplicationController
 
     @materia =  MateriasPrima.where( nombre:  @formula.materia_prima_1.to_s ).first
     nueva_cantidad =  @materia.cantidad -=  @formula.kg_materia_prima_1.to_i 
-    @materia.update(cantidad: nueva_cantidad)
+    if nueva_cantidad < 0 
+      @orden_trabajo.errors.add(:gateway, "No hay suficiente materia: #{@materia.nombre} , necesitas almenos #{@formula.kg_materia_prima_1.to_i} y tienes #{@formula.kg_materia_prima_1.to_i + @materia.cantidad}")
+      return false
+    else
+      @materia.update(cantidad: nueva_cantidad)
+    end
+
    
     @materia2 =  MateriasPrima.where( nombre:  @formula.materia_prima_2.to_s ).first
-    nueva_cantidad2 =  @materia2.cantidad -=  @formula.kg_materia_prima_2.to_i 
-    @materia2.update(cantidad: nueva_cantidad2)
+    nueva_cantidad2 =  @materia2.cantidad -=  @formula.kg_materia_prima_2.to_i
+    if nueva_cantidad2 < 0 
+      @orden_trabajo.errors.add(:gateway, "No hay suficiente materia: #{@materia2.nombre} , necesitas almenos #{@formula.kg_materia_prima_2.to_i} y tienes #{@formula.kg_materia_prima_2.to_i + @materia2.cantidad}")
+      return false
+    else
+        @materia2.update(cantidad: nueva_cantidad2)
+    end 
+    
 
     @materia3 =  MateriasPrima.where( nombre:  @formula.materia_prima_3.to_s ).first
     nueva_cantidad3 =  @materia3.cantidad -=  @formula.kg_materia_prima_3.to_i 
-    @materia3.update(cantidad: nueva_cantidad3)
+    if nueva_cantidad3 < 0 
+      @orden_trabajo.errors.add(:gateway, "No hay suficiente materia: #{@materia3.nombre} , necesitas almenos #{@formula.kg_materia_prima_3.to_i} y tienes #{@formula.kg_materia_prima_3.to_i + @materia3.cantidad}")
+      return false
+    else
+        @materia3.update(cantidad: nueva_cantidad3)
+    end 
 
     @materia4 =  MateriasPrima.where( nombre:  @formula.materia_prima_4.to_s ).first
     nueva_cantidad4 =  @materia4.cantidad -=  @formula.kg_materia_prima_4.to_i 
-    @materia4.update(cantidad: nueva_cantidad4)
+    if nueva_cantidad4 < 0 
+      @orden_trabajo.errors.add(:gateway, "No hay suficiente materia: #{@materia4.nombre} , necesitas almenos #{@formula.kg_materia_prima_4.to_i} y tienes #{@formula.kg_materia_prima_4.to_i + @materia4.cantidad}")
+      return false
+    else
+        @materia4.update(cantidad: nueva_cantidad4)
+    end 
 
     @materia5 =  MateriasPrima.where( nombre:  @formula.materia_prima_5.to_s ).first
     nueva_cantidad5 =  @materia5.cantidad -=  @formula.kg_materia_prima_5.to_i 
-    @materia5.update(cantidad: nueva_cantidad5)
+    if nueva_cantidad5 < 0 
+      @orden_trabajo.errors.add(:gateway, "No hay suficiente materia: #{@materia5.nombre} , necesitas almenos #{@formula.kg_materia_prima_5.to_i} y tienes #{@formula.kg_materia_prima_5.to_i + @materia5.cantidad}")
+      return false
+    else
+        @materia5.update(cantidad: nueva_cantidad5)
+    end 
 
     @materia6 =  MateriasPrima.where( nombre:  @formula.materia_prima_6.to_s ).first
     nueva_cantidad6 =  @materia6.cantidad -=  @formula.kg_materia_prima_6.to_i 
-    @materia6.update(cantidad: nueva_cantidad6)
+    if nueva_cantidad6 < 0 
+      @orden_trabajo.errors.add(:gateway, "No hay suficiente materia: #{@materia6.nombre} , necesitas almenos #{@formula.kg_materia_prima_6.to_i} y tienes #{@formula.kg_materia_prima_6.to_i + @materia6.cantidad}")
+      return false
+    else
+        @materia6.update(cantidad: nueva_cantidad6)
+    end 
 
     @materia7 =  MateriasPrima.where( nombre:  @formula.materia_prima_7.to_s ).first
     nueva_cantidad7 =  @materia7.cantidad -=  @formula.kg_materia_prima_7.to_i 
-    @materia7.update(cantidad: nueva_cantidad7)
+    if nueva_cantidad7 < 0 
+      @orden_trabajo.errors.add(:gateway, "No hay suficiente materia: #{@materia7.nombre} , necesitas almenos #{@formula.kg_materia_prima_7.to_i} y tienes #{@formula.kg_materia_prima_7.to_i + @materia7.cantidad}")
+      return false
+    else
+        @materia7.update(cantidad: nueva_cantidad7)
+    end 
 
     @materia8 =  MateriasPrima.where( nombre:  @formula.materia_prima_8.to_s ).first
     nueva_cantidad8 =  @materia8.cantidad -=  @formula.kg_materia_prima_8.to_i 
-    @materia8.update(cantidad: nueva_cantidad8)
+    if nueva_cantidad8 < 0 
+      @orden_trabajo.errors.add(:gateway, "No hay suficiente materia: #{@materia8.nombre} , necesitas almenos #{@formula.kg_materia_prima_8.to_i} y tienes #{@formula.kg_materia_prima_8.to_i + @materia8.cantidad}")
+      return false
+    else
+        @materia8.update(cantidad: nueva_cantidad8)
+    end 
 
     @materia9 =  MateriasPrima.where( nombre:  @formula.materia_prima_9.to_s ).first
     nueva_cantidad9 =  @materia9.cantidad -=  @formula.kg_materia_prima_9.to_i 
-    @materia9.update(cantidad: nueva_cantidad9)
+    if nueva_cantidad9 < 0 
+      @orden_trabajo.errors.add(:gateway, "No hay suficiente materia: #{@materia9.nombre} , necesitas almenos #{@formula.kg_materia_prima_9.to_i} y tienes #{@formula.kg_materia_prima_9.to_i + @materia9.cantidad}")
+      return false
+    else
+        @materia9.update(cantidad: nueva_cantidad9)
+    end 
 
     @materia10 =  MateriasPrima.where( nombre:  @formula.materia_prima_10.to_s ).first
     nueva_cantidad10 =  @materia10.cantidad -=  @formula.kg_materia_prima_10.to_i 
-    @materia10.update(cantidad: nueva_cantidad10)
+    if nueva_cantidad10 < 0 
+      @orden_trabajo.errors.add(:gateway, "No hay suficiente materia: #{@materia10.nombre} , necesitas almenos #{@formula.kg_materia_prima_10.to_i} y tienes #{@formula.kg_materia_prima_10.to_i + @materia10.cantidad}")
+      return false
+    else
+        @materia10.update(cantidad: nueva_cantidad10)
+    end 
 
     @materia11 =  MateriasPrima.where( nombre:  @formula.materia_prima_11.to_s ).first
     nueva_cantidad11 =  @materia11.cantidad -=  @formula.kg_materia_prima_11.to_i 
-    @materia11.update(cantidad: nueva_cantidad11)
+    if nueva_cantidad11 < 0 
+      @orden_trabajo.errors.add(:gateway, "No hay suficiente materia: #{@materia11.nombre} , necesitas almenos #{@formula.kg_materia_prima_11.to_i} y tienes #{@formula.kg_materia_prima_11.to_i + @materia11.cantidad}")
+      return false
+    else
+        @materia11.update(cantidad: nueva_cantidad11)
+    end 
 
     @materia12 =  MateriasPrima.where( nombre:  @formula.materia_prima_12.to_s ).first
     nueva_cantidad12 =  @materia12.cantidad -=  @formula.kg_materia_prima_12.to_i 
-    @materia12.update(cantidad: nueva_cantidad12)
+    if nueva_cantidad12 < 0 
+      @orden_trabajo.errors.add(:gateway, "No hay suficiente materia: #{@materia12.nombre} , necesitas almenos #{@formula.kg_materia_prima_12.to_i} y tienes #{@formula.kg_materia_prima_12.to_i + @materia12.cantidad}")
+      return false
+    else
+        @materia12.update(cantidad: nueva_cantidad12)
+    end 
 
     @materia13 =  MateriasPrima.where( nombre:  @formula.materia_prima_13.to_s ).first
     nueva_cantidad13 =  @materia13.cantidad -=  @formula.kg_materia_prima_13.to_i 
-    @materia13.update(cantidad: nueva_cantidad13)
+    if nueva_cantidad13 < 0 
+      @orden_trabajo.errors.add(:gateway, "No hay suficiente materia: #{@materia13.nombre} , necesitas almenos #{@formula.kg_materia_prima_13.to_i} y tienes #{@formula.kg_materia_prima_13.to_i + @materia13.cantidad}")
+      return false
+    else
+        @materia13.update(cantidad: nueva_cantidad13)
+    end 
 
     @materia14 =  MateriasPrima.where( nombre:  @formula.materia_prima_14.to_s ).first
     nueva_cantidad14 =  @materia14.cantidad -=  @formula.kg_materia_prima_14.to_i 
-    @materia14.update(cantidad: nueva_cantidad14)
+    if nueva_cantidad14 < 0 
+      @orden_trabajo.errors.add(:gateway, "No hay suficiente materia: #{@materia14.nombre} , necesitas almenos #{@formula.kg_materia_prima_14.to_i} y tienes #{@formula.kg_materia_prima_14.to_i + @materia14.cantidad}")
+      return false
+    else
+        @materia14.update(cantidad: nueva_cantidad14)
+    end 
 
     @materia15 =  MateriasPrima.where( nombre:  @formula.materia_prima_15.to_s ).first
     nueva_cantidad15 =  @materia15.cantidad -=  @formula.kg_materia_prima_15.to_i 
-    @materia15.update(cantidad: nueva_cantidad15)
+    if nueva_cantidad15 < 0 
+      @orden_trabajo.errors.add(:gateway, "No hay suficiente materia: #{@materia15.nombre} , necesitas almenos #{@formula.kg_materia_prima_15.to_i} y tienes #{@formula.kg_materia_prima_15.to_i + @materia15.cantidad}")
+      return false
+    else
+        @materia15.update(cantidad: nueva_cantidad15)
+    end 
 
     @materia16 =  MateriasPrima.where( nombre:  @formula.materia_prima_16.to_s ).first
     nueva_cantidad16 =  @materia16.cantidad -=  @formula.kg_materia_prima_16.to_i 
-    @materia16.update(cantidad: nueva_cantidad16)
+    if nueva_cantidad16 < 0 
+      @orden_trabajo.errors.add(:gateway, "No hay suficiente materia: #{@materia16.nombre} , necesitas almenos #{@formula.kg_materia_prima_16.to_i} y tienes #{@formula.kg_materia_prima_16.to_i + @materia16.cantidad}")
+      return false
+    else
+        @materia16.update(cantidad: nueva_cantidad16)
+    end 
 
     @materia17 =  MateriasPrima.where( nombre:  @formula.materia_prima_17.to_s ).first
     nueva_cantidad17 =  @materia17.cantidad -=  @formula.kg_materia_prima_17.to_i 
-    @materia17.update(cantidad: nueva_cantidad17)
+    if nueva_cantidad17 < 0 
+      @orden_trabajo.errors.add(:gateway, "No hay suficiente materia: #{@materia17.nombre} , necesitas almenos #{@formula.kg_materia_prima_17.to_i} y tienes #{@formula.kg_materia_prima_17.to_i + @materia17.cantidad}")
+      return false
+    else
+        @materia17.update(cantidad: nueva_cantidad17)
+    end 
 
     @materia18 =  MateriasPrima.where( nombre:  @formula.materia_prima_18.to_s ).first
     nueva_cantidad18 =  @materia18.cantidad -=  @formula.kg_materia_prima_18.to_i 
-    @materia18.update(cantidad: nueva_cantidad18)
+    if nueva_cantidad18 < 0 
+      @orden_trabajo.errors.add(:gateway, "No hay suficiente materia: #{@materia18.nombre} , necesitas almenos #{@formula.kg_materia_prima_18.to_i} y tienes #{@formula.kg_materia_prima_18.to_i + @materia18.cantidad}")
+      return false
+    else
+        @materia18.update(cantidad: nueva_cantidad18)
+    end 
 
     @materia19 =  MateriasPrima.where( nombre:  @formula.materia_prima_19.to_s ).first
     nueva_cantidad19 =  @materia19.cantidad -=  @formula.kg_materia_prima_19.to_i 
-    @materia19.update(cantidad: nueva_cantidad19)
+    if nueva_cantidad19 < 0 
+      @orden_trabajo.errors.add(:gateway, "No hay suficiente materia: #{@materia19.nombre} , necesitas almenos #{@formula.kg_materia_prima_19.to_i} y tienes #{@formula.kg_materia_prima_19.to_i + @materia19.cantidad}")
+      return false
+    else
+        @materia19.update(cantidad: nueva_cantidad19)
+    end 
 
     @materia20 =  MateriasPrima.where( nombre:  @formula.materia_prima_20.to_s ).first
     nueva_cantidad20 =  @materia20.cantidad -=  @formula.kg_materia_prima_20.to_i 
-    @materia20.update(cantidad: nueva_cantidad20)
+    if nueva_cantidad20 < 0 
+      @orden_trabajo.errors.add(:gateway, "No hay suficiente materia: #{@materia20.nombre} , necesitas almenos #{@formula.kg_materia_prima_20.to_i} y tienes #{@formula.kg_materia_prima_20.to_i + @materia20.cantidad}")
+      return false
+    else
+        @materia20.update(cantidad: nueva_cantidad20)
+    end 
   end
 
 
 
   # POST /orden_trabajos
   # POST /orden_trabajos.json
+
+
+
+
+
   def create
     @orden_trabajo = OrdenTrabajo.new(orden_trabajo_params)
     
     calcula_tinetas!
     actualiza_fecha!
-    actualiza_materias!
 
     respond_to do |format|
-      if @orden_trabajo.save
-        format.html { redirect_to @orden_trabajo, notice: 'La orden de trabajo se creo correctamente.' }
-        format.json { render :show, status: :created, location: @orden_trabajo }
+      if  actualiza_materias! != false
+        if @orden_trabajo.save
+          format.html { redirect_to @orden_trabajo, notice: 'La orden de trabajo se creo correctamente.' }
+          format.json { render :show, status: :created, location: @orden_trabajo }
+        else
+          format.html { render :new }
+          format.json { render json: @orden_trabajo.errors, status: :unprocessable_entity }
+        end
       else
         format.html { render :new }
         format.json { render json: @orden_trabajo.errors, status: :unprocessable_entity }

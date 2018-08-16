@@ -37,7 +37,7 @@
   <div class="materia_formula_edit">
     <div class="field">
       <%= form.label :materia_prima_1 %>
-      <%= form.select(:materia_prima_1, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+      <%= form.select(:materia_prima_1, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } .push(["No Aplica",nil]) ) %>
     </div>
 
     <div class="field">
@@ -60,7 +60,7 @@
     <div class="materia_formula_edit">
     <div class="field">
       <%= form.label :materia_prima_2 %>
-      <%= form.select(:materia_prima_2, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+      <%= form.select(:materia_prima_2, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } .push(["No Aplica",nil]) ) %>
     </div>
 
     <div class="field">
@@ -82,7 +82,7 @@
     <div class="materia_formula_edit">
     <div class="field">
       <%= form.label :materia_prima_3 %>
-      <%= form.select(:materia_prima_3, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+      <%= form.select(:materia_prima_3, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } .push(["No Aplica",nil]) ) %>
     </div>
 
     <div class="field">
@@ -105,7 +105,7 @@
     <div class="materia_formula_edit">
     <div class="field">
       <%= form.label :materia_prima_4 %>
-      <%= form.select(:materia_prima_4, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+      <%= form.select(:materia_prima_4, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } .push(["No Aplica",nil]) ) %>
     </div>
 
     <div class="field">
@@ -128,7 +128,7 @@
     <div class="materia_formula_edit">
     <div class="field">
       <%= form.label :materia_prima_5 %>
-      <%= form.select(:materia_prima_5, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+      <%= form.select(:materia_prima_5, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } .push(["No Aplica",nil]) ) %>
     </div>
 
     <div class="field">
@@ -151,7 +151,7 @@
     <div class="materia_formula_edit">
     <div class="field">
       <%= form.label :materia_prima_6 %>
-      <%= form.select(:materia_prima_6, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+      <%= form.select(:materia_prima_6, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } .push(["No Aplica",nil]) ) %>
     </div>
 
     <div class="field">
@@ -174,7 +174,7 @@
     <div class="materia_formula_edit">
     <div class="field">
       <%= form.label :materia_prima_7 %>
-      <%= form.select(:materia_prima_7, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+      <%= form.select(:materia_prima_7, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } .push(["No Aplica",nil]) ) %>
     </div>
 
     <div class="field">
@@ -197,7 +197,7 @@
     <div class="materia_formula_edit">
     <div class="field">
       <%= form.label :materia_prima_8 %>
-      <%= form.select(:materia_prima_8, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+      <%= form.select(:materia_prima_8, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } .push(["No Aplica",nil]) ) %>
     </div>
 
     <div class="field">
@@ -220,7 +220,7 @@
     <div class="materia_formula_edit">
     <div class="field">
       <%= form.label :materia_prima_9 %>
-      <%= form.select(:materia_prima_9, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+      <%= form.select(:materia_prima_9, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } .push(["No Aplica",nil]) ) %>
     </div>
 
     <div class="field">
@@ -243,7 +243,7 @@
     <div class="materia_formula_edit">
     <div class="field">
       <%= form.label :materia_prima_10 %>
-      <%= form.select(:materia_prima_10, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+      <%= form.select(:materia_prima_10, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } .push(["No Aplica",nil]) ) %>
     </div>
 
     <div class="field">
@@ -266,7 +266,7 @@
     <div class="materia_formula_edit">
     <div class="field">
       <%= form.label :materia_prima_11 %>
-      <%= form.select(:materia_prima_11, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+      <%= form.select(:materia_prima_11, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } .push(["No Aplica",nil]) ) %>
     </div>
 
     <div class="field">
@@ -288,7 +288,7 @@
     <div class="materia_formula_edit">
     <div class="field">
       <%= form.label :materia_prima_12 %>
-      <%= form.select(:materia_prima_12, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+      <%= form.select(:materia_prima_12, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } .push(["No Aplica",nil]) ) %>
     </div>
 
     <div class="field">
@@ -311,7 +311,7 @@
     <div class="materia_formula_edit">
     <div class="field">
       <%= form.label :materia_prima_13 %>
-      <%= form.select(:materia_prima_13, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+      <%= form.select(:materia_prima_13, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } .push(["No Aplica",nil]) ) %>
     </div>
 
     <div class="field">
@@ -334,7 +334,7 @@
     <div class="materia_formula_edit">
     <div class="field">
       <%= form.label :materia_prima_14 %>
-      <%= form.select(:materia_prima_14, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+      <%= form.select(:materia_prima_14, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } .push(["No Aplica",nil]) ) %>
     </div>
 
     <div class="field">
@@ -356,7 +356,7 @@
     <div class="materia_formula_edit">
     <div class="field">
       <%= form.label :materia_prima_15 %>
-      <%= form.select(:materia_prima_15, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+      <%= form.select(:materia_prima_15, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } .push(["No Aplica",nil]) ) %>
     </div>
 
     <div class="field">
@@ -378,7 +378,7 @@
     <div class="materia_formula_edit">
     <div class="field">
       <%= form.label :materia_prima_16 %>
-      <%= form.select(:materia_prima_16, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+      <%= form.select(:materia_prima_16, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } .push(["No Aplica",nil]) ) %>
     </div>
 
     <div class="field">
@@ -400,7 +400,7 @@
     <div class="materia_formula_edit">
     <div class="field">
       <%= form.label :materia_prima_17 %>
-      <%= form.select(:materia_prima_17, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+      <%= form.select(:materia_prima_17, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } .push(["No Aplica",nil]) ) %>
     </div>
 
     <div class="field">
@@ -423,7 +423,7 @@
     <div class="materia_formula_edit">
     <div class="field">
       <%= form.label :materia_prima_18 %>
-      <%= form.select(:materia_prima_18, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+      <%= form.select(:materia_prima_18, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } .push(["No Aplica",nil]) ) %>
     </div>
 
     <div class="field">
@@ -446,7 +446,7 @@
     <div class="materia_formula_edit">
     <div class="field">
       <%= form.label :materia_prima_19 %>
-      <%= form.select(:materia_prima_19, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+      <%= form.select(:materia_prima_19, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } .push(["No Aplica",nil]) ) %>
     </div>
 
     <div class="field">
@@ -469,7 +469,7 @@
     <div class="materia_formula_edit">
     <div class="field">
       <%= form.label :materia_prima_20 %>
-      <%= form.select(:materia_prima_20, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } ) %>
+      <%= form.select(:materia_prima_20, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } .push(["No Aplica",nil]) ) %>
     </div>
 
     <div class="field">
