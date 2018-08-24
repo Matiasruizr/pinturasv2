@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%= wicked_pdf_stylesheet_link_tag 'pdf' %>
+</head>
+<body>
+
+<table style="width:100%">
+ <tr>
+    <th> Numero de ot </th>
+ </tr>
+  <tr>
+    <td>Pantonera:</td>
+    <td><%= @orden_trabajo.pantonera %></td> 
+  </tr>
+  <tr>
+    <td>Codigo:</td>
+    <td>Smith</td> 
+  </tr>
+  <tr>
+    <td>Cliente</td>
+    <td><%= @orden_trabajo.cliente %></td> 
+  </tr>
+  <tr>
+    <td>Orden de compra:</td>
+    <td><%= @orden_trabajo.orden_de_compra %></td>
+  </tr>
+  <tr>
+    <td>Producto</td>
+    <td><%= @orden_trabajo.grano  %></td>
+    
+  </tr>
+  <tr>
+    <td> Formula </td>
+    <td> <%= @orden_trabajo.producto %></td>
+  </tr>
+  <tr>
+    <td> Formula kilos</td>
+    <td>  <%= @orden_trabajo.formula_kilos %></td>
+  </tr>
+  <tr>
+    <td>Tinetas</td>
+    <td>  <%= @orden_trabajo.tinetas %></td>
+  </tr>
+</table>
+
+
+
+<p>
+  <strong>Tinetas:</strong>
+  <%= @orden_trabajo.tinetas %>
+</p>
+
+
+
+<p>
+  <strong>Muestra color:</strong>
+  <%= @orden_trabajo.muestra_color %>
+</p>
+
+<p>
+  <strong>Colorista a cargo:</strong>
+  <%= @orden_trabajo.colorista_a_cargo %>
+</p>
+
+<p>
+  <strong>Formula kilos:</strong>
+  <%= @orden_trabajo.formula_kilos %>
+</p>
+
+<% @formula = FormulaPintura.where(descripcion: @orden_trabajo.producto).first %>
+<%= @formula.descripcion %>
+</body>
+</html>

@@ -9,12 +9,14 @@
       <th>Descripcion</th>
       <th>Marca</th>
       <th>Cantidad</th>
-      <th>Precio</th>
+      <th>Precio (USD) </th>
+      <th>Precio (CLP)</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
+  <% $totalInventario = 0 %>
     <% @materias_primas.each do |materias_prima| %>
       <tr>
         <td><%= materias_prima.nombre %></td>
@@ -22,12 +24,18 @@
         <td><%= materias_prima.marca %></td>
         <td><%= materias_prima.cantidad %></td>
         <td><%= materias_prima.precio %></td>
+        <td><%= materias_prima.precio * $dolar %></td>
         <td><%= link_to 'Show', materias_prima %></td>
         <td><%= link_to 'Edit', edit_materias_prima_path(materias_prima) %></td>
         <td><%= link_to 'Destroy', materias_prima, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      <% $totalInventario += materias_prima.precio %>
     <% end %>
+   
   </tbody>
+   <h3> Dolar actual <%= $dolar %> </h3>
+   <h3> Total US <%= $totalInventario %><h3>
+   <h3> Total CLP <%= $totalInventario * $dolar %><h3>
 </table>
 
 <br>

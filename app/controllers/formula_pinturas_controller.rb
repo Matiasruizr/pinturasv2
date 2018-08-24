@@ -82,12 +82,79 @@ class FormulaPinturasController < ApplicationController
     end
   end
 
+  def calculo_kg_formula!
+    #Debe calcular los kilos de materia primna en base al porcentaje multiplicado por el total 
+    if @formula_pintura.porcentaje_materia_prima_1 > 0
+    @formula_pintura.kg_materia_prima_1 = ( (@formula_pintura.porcentaje_materia_prima_1 / 100) *  @formula_pintura.formula_kg )
+    end
+    if @formula_pintura.porcentaje_materia_prima_2 > 0
+    @formula_pintura.kg_materia_prima_2 = ( (@formula_pintura.porcentaje_materia_prima_2 / 100) *  @formula_pintura.formula_kg )
+    end
+    if @formula_pintura.porcentaje_materia_prima_3 > 0
+      @formula_pintura.kg_materia_prima_3 = ( (@formula_pintura.porcentaje_materia_prima_3 / 100) *  @formula_pintura.formula_kg )
+    end
+    if @formula_pintura.porcentaje_materia_prima_4 > 0
+      @formula_pintura.kg_materia_prima_4 = ( (@formula_pintura.porcentaje_materia_prima_4 / 100) *  @formula_pintura.formula_kg )
+    end
+    if @formula_pintura.porcentaje_materia_prima_5 > 0
+      @formula_pintura.kg_materia_prima_5 = ( (@formula_pintura.porcentaje_materia_prima_5 / 100) *  @formula_pintura.formula_kg )
+    end
+    if @formula_pintura.porcentaje_materia_prima_6 > 0
+      @formula_pintura.kg_materia_prima_6 = ( (@formula_pintura.porcentaje_materia_prima_6 / 100) *  @formula_pintura.formula_kg )
+    end
+    if @formula_pintura.porcentaje_materia_prima_7 > 0
+      @formula_pintura.kg_materia_prima_7 = ( (@formula_pintura.porcentaje_materia_prima_7 / 100) *  @formula_pintura.formula_kg )
+    end
+    if @formula_pintura.porcentaje_materia_prima_8 > 0
+      @formula_pintura.kg_materia_prima_8 = ( (@formula_pintura.porcentaje_materia_prima_8 / 100) *  @formula_pintura.formula_kg )
+    end
+    if @formula_pintura.porcentaje_materia_prima_9 > 0
+      @formula_pintura.kg_materia_prima_9 = ( (@formula_pintura.porcentaje_materia_prima_9 / 100) *  @formula_pintura.formula_kg )
+    end
+    if @formula_pintura.porcentaje_materia_prima_10 > 0
+      @formula_pintura.kg_materia_prima_10 = ( (@formula_pintura.porcentaje_materia_prima_10 / 100) *  @formula_pintura.formula_kg )
+    end
+    if @formula_pintura.porcentaje_materia_prima_11 > 0
+      @formula_pintura.kg_materia_prima_11 = ( (@formula_pintura.porcentaje_materia_prima_11 / 100) *  @formula_pintura.formula_kg )
+    end
+    if @formula_pintura.porcentaje_materia_prima_12 > 0
+      @formula_pintura.kg_materia_prima_12 = ( (@formula_pintura.porcentaje_materia_prima_12 / 100) *  @formula_pintura.formula_kg )
+    end
+    if @formula_pintura.porcentaje_materia_prima_13 > 0
+      @formula_pintura.kg_materia_prima_13 = ( (@formula_pintura.porcentaje_materia_prima_13 / 100) *  @formula_pintura.formula_kg )
+    end
+    if @formula_pintura.porcentaje_materia_prima_14 > 0
+      @formula_pintura.kg_materia_prima_14 = ( (@formula_pintura.porcentaje_materia_prima_14 / 100) *  @formula_pintura.formula_kg )
+    end
+    if @formula_pintura.porcentaje_materia_prima_15 > 0
+      @formula_pintura.kg_materia_prima_15 = ( (@formula_pintura.porcentaje_materia_prima_15 / 100) *  @formula_pintura.formula_kg )
+    end
+    if @formula_pintura.porcentaje_materia_prima_16 > 0
+      @formula_pintura.kg_materia_prima_16 = ( (@formula_pintura.porcentaje_materia_prima_16 / 100) *  @formula_pintura.formula_kg )
+    end
+    if @formula_pintura.porcentaje_materia_prima_17 > 0
+      @formula_pintura.kg_materia_prima_17 = ( (@formula_pintura.porcentaje_materia_prima_17 / 100) *  @formula_pintura.formula_kg )
+    end
+    if @formula_pintura.porcentaje_materia_prima_18 > 0
+      @formula_pintura.kg_materia_prima_18 = ( (@formula_pintura.porcentaje_materia_prima_18 / 100) *  @formula_pintura.formula_kg )
+    end
+    if @formula_pintura.porcentaje_materia_prima_19 > 0
+      @formula_pintura.kg_materia_prima_19 = ( (@formula_pintura.porcentaje_materia_prima_19 / 100) *  @formula_pintura.formula_kg )
+    end
+    if @formula_pintura.porcentaje_materia_prima_20 > 0
+      @formula_pintura.kg_materia_prima_20 = ( (@formula_pintura.porcentaje_materia_prima_20 / 100) *  @formula_pintura.formula_kg )
+    end
+    
+  end
+
   # POST /formula_pinturas
   # POST /formula_pinturas.json
   def create
     @formula_pintura = FormulaPintura.new(formula_pintura_params)
 
-     costo_total_materia_prima!
+    
+    calculo_kg_formula!
+    costo_total_materia_prima!
 
     respond_to do |format|
       if @formula_pintura.save

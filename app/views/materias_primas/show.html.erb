@@ -21,9 +21,13 @@
 </p>
 
 <p>
-  <strong>Precio:</strong>
+  <strong>Precio en dolares:</strong>
   <%= @materias_prima.precio %>
 </p>
 
+<p>
+  <strong>Precio en pesos chilenos:</strong>
+  <%= @materias_prima.precio * $dolar %>
+</p>
 <%= link_to 'Edit', edit_materias_prima_path(@materias_prima) %> |
 <%= link_to 'Back', materias_primas_path %>

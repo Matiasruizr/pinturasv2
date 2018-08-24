@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 
+gem 'httparty'
 
 gem 'bootstrap-sass', '~> 3.3.7'
 
@@ -43,8 +44,13 @@ gem 'jquery-rails'
 # Transformar un html en pdf descargable
 gem 'wicked_pdf'
 
+gem 'wkhtmltopdf-binary'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+
+
+gem 'sbif'
 
 
 group :production do
@@ -70,6 +76,8 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
 end
+
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
