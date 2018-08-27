@@ -1,2 +1,3 @@
 class FormulaPintura < ApplicationRecord
+    
 end

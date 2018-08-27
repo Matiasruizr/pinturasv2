@@ -51,10 +51,14 @@ h5{
       font-family:'Arial';
       clear:both;
 }
-  
 </style>
+
 <% @formula = FormulaPintura.where(descripcion: @orden_trabajo.producto).first %>
+<% @formula.formula_kg = @orden_trabajo.formula_kilos %>
+<% calculo_kg_formula(@formula) %>
+
         <%= wicked_pdf_image_tag 'logoandescolor.png' %>
+       
         <h5> Fecha de emisión de reporte: <%= Time.now %></h5>
 <table class="ot" cellspacing="0">
  <tr>
@@ -126,121 +130,121 @@ h5{
     <td> 1 </td>
     <td> <%= @formula.materia_prima_1 %> </td>
     <td> <%= @formula.porcentaje_materia_prima_1 %></td>
-    <td> <%= @formula.kg_materia_prima_1 %> </td>
+    <td> <%= @formula.kg_materia_prima_1.to_f.round(2) %> </td>
   </tr>
     <tr>
     <td> 2 </td>
     <td> <%= @formula.materia_prima_2 %> </td>
     <td> <%= @formula.porcentaje_materia_prima_2 %></td>
-    <td> <%= @formula.kg_materia_prima_2 %> </td>
+    <td> <%= @formula.kg_materia_prima_2.to_f.round(2)  %> </td>
   </tr>
     <tr>
     <td> 3 </td>
     <td> <%= @formula.materia_prima_3 %> </td>
     <td> <%= @formula.porcentaje_materia_prima_3 %></td>
-    <td> <%= @formula.kg_materia_prima_3 %> </td>
+    <td> <%= @formula.kg_materia_prima_3.to_f.round(2) %> </td>
   </tr>
     <tr>
     <td> 4 </td>
     <td> <%= @formula.materia_prima_4 %> </td>
     <td> <%= @formula.porcentaje_materia_prima_4 %></td>
-    <td> <%= @formula.kg_materia_prima_4 %> </td>
+    <td> <%= @formula.kg_materia_prima_4.to_f.round(2) %> </td>
   </tr>
     <tr>
     <td> 5 </td>
     <td> <%= @formula.materia_prima_5 %> </td>
     <td> <%= @formula.porcentaje_materia_prima_5 %></td>
-    <td> <%= @formula.kg_materia_prima_5 %> </td>
+    <td> <%= @formula.kg_materia_prima_5.to_f.round(2) %> </td>
   </tr>
     <tr>
     <td> 6 </td>
     <td> <%= @formula.materia_prima_6 %> </td>
     <td> <%= @formula.porcentaje_materia_prima_6 %></td>
-    <td> <%= @formula.kg_materia_prima_6 %> </td>
+    <td> <%= @formula.kg_materia_prima_6.to_f.round(2) %> </td>
   </tr>
     <tr>
     <td> 7 </td>
     <td> <%= @formula.materia_prima_7 %> </td>
     <td> <%= @formula.porcentaje_materia_prima_7 %></td>
-    <td> <%= @formula.kg_materia_prima_7 %> </td>
+    <td> <%= @formula.kg_materia_prima_7.to_f.round(2) %> </td>
   </tr>
     <tr>
     <td> 8 </td>
     <td> <%= @formula.materia_prima_8 %> </td>
     <td> <%= @formula.porcentaje_materia_prima_8 %></td>
-    <td> <%= @formula.kg_materia_prima_8 %> </td>
+    <td> <%= @formula.kg_materia_prima_8.to_f.round(2) %> </td>
   </tr>
     <tr>
     <td> 9 </td>
     <td> <%= @formula.materia_prima_9 %> </td>
     <td> <%= @formula.porcentaje_materia_prima_9 %></td>
-    <td> <%= @formula.kg_materia_prima_9 %> </td>
+    <td> <%= @formula.kg_materia_prima_9.to_f.round(2) %> </td>
   </tr>
     <tr>
     <td> 10 </td>
     <td> <%= @formula.materia_prima_10 %> </td>
     <td> <%= @formula.porcentaje_materia_prima_10 %></td>
-    <td> <%= @formula.kg_materia_prima_10 %> </td>
+    <td> <%= @formula.kg_materia_prima_10.to_f.round(2) %> </td>
   </tr>
     <tr>
     <td> 11 </td>
     <td> <%= @formula.materia_prima_11 %> </td>
     <td> <%= @formula.porcentaje_materia_prima_11 %></td>
-    <td> <%= @formula.kg_materia_prima_11 %> </td>
+    <td> <%= @formula.kg_materia_prima_11.to_f.round(2) %> </td>
   </tr>
     <tr>
     <td> 12 </td>
     <td> <%= @formula.materia_prima_12 %> </td>
     <td> <%= @formula.porcentaje_materia_prima_12 %></td>
-    <td> <%= @formula.kg_materia_prima_12 %> </td>
+    <td> <%= @formula.kg_materia_prima_12.to_f.round(2) %> </td>
   </tr>
     <tr>
     <td> 13 </td>
     <td> <%= @formula.materia_prima_13 %> </td>
     <td> <%= @formula.porcentaje_materia_prima_13 %></td>
-    <td> <%= @formula.kg_materia_prima_13 %> </td>
+    <td> <%= @formula.kg_materia_prima_13.to_f.round(2) %> </td>
   </tr>
     <tr>
     <td> 14 </td>
     <td> <%= @formula.materia_prima_14 %> </td>
     <td> <%= @formula.porcentaje_materia_prima_14 %></td>
-    <td> <%= @formula.kg_materia_prima_14 %> </td>
+    <td> <%= @formula.kg_materia_prima_14.to_f.round(2) %> </td>
   </tr>
     <tr>
     <td> 15 </td>
     <td> <%= @formula.materia_prima_15 %> </td>
     <td> <%= @formula.porcentaje_materia_prima_15 %></td>
-    <td> <%= @formula.kg_materia_prima_15 %> </td>
+    <td> <%= @formula.kg_materia_prima_15.to_f.round(2) %> </td>
   </tr>
     <tr>
     <td> 16 </td>
     <td> <%= @formula.materia_prima_16 %> </td>
     <td> <%= @formula.porcentaje_materia_prima_16 %></td>
-    <td> <%= @formula.kg_materia_prima_16 %> </td>
+    <td> <%= @formula.kg_materia_prima_16.to_f.round(2) %> </td>
   </tr>
     <tr>
     <td> 17 </td>
     <td> <%= @formula.materia_prima_17 %> </td>
     <td> <%= @formula.porcentaje_materia_prima_17 %></td>
-    <td> <%= @formula.kg_materia_prima_17 %> </td>
+    <td> <%= @formula.kg_materia_prima_17.to_f.round(2) %> </td>
   </tr>
     <tr>
     <td> 18 </td>
     <td> <%= @formula.materia_prima_18 %> </td>
     <td> <%= @formula.porcentaje_materia_prima_18 %></td>
-    <td> <%= @formula.kg_materia_prima_18 %> </td>
+    <td> <%= @formula.kg_materia_prima_18.to_f.round(2) %> </td>
   </tr>
     <tr>
     <td> 19 </td>
     <td> <%= @formula.materia_prima_19 %> </td>
     <td> <%= @formula.porcentaje_materia_prima_19 %></td>
-    <td> <%= @formula.kg_materia_prima_19 %> </td>
+    <td> <%= @formula.kg_materia_prima_19.to_f.round(2) %> </td>
   </tr>
     <tr>
     <td> 20 </td>
     <td> <%= @formula.materia_prima_20 %> </td>
     <td> <%= @formula.porcentaje_materia_prima_20 %></td>
-    <td> <%= @formula.kg_materia_prima_20 %> </td>
+    <td> <%= @formula.kg_materia_prima_20.to_f.round(2) %> </td>
   </tr>
 
 </table>
