@@ -10,6 +10,11 @@ class FormulaPinturasController < ApplicationController
   # GET /formula_pinturas/1
   # GET /formula_pinturas/1.json
   def show
+    respond_to do |format|
+      format.html  
+      format.json
+      format.pdf {render template: 'formula_pinturas/reporte', pdf: 'reporte'}
+    end
   end
 
   # GET /formula_pinturas/new
@@ -84,64 +89,64 @@ class FormulaPinturasController < ApplicationController
 
   def calculo_kg_formula!
     #Debe calcular los kilos de materia primna en base al porcentaje multiplicado por el total 
-    if @formula_pintura.porcentaje_materia_prima_1 > 0
+    if @formula_pintura.porcentaje_materia_prima_1.blank? == false
     @formula_pintura.kg_materia_prima_1 = ( (@formula_pintura.porcentaje_materia_prima_1 / 100) *  @formula_pintura.formula_kg )
     end
-    if @formula_pintura.porcentaje_materia_prima_2 > 0
+    if @formula_pintura.porcentaje_materia_prima_2.blank? == false
     @formula_pintura.kg_materia_prima_2 = ( (@formula_pintura.porcentaje_materia_prima_2 / 100) *  @formula_pintura.formula_kg )
     end
-    if @formula_pintura.porcentaje_materia_prima_3 > 0
+    if @formula_pintura.porcentaje_materia_prima_3.blank? == false
       @formula_pintura.kg_materia_prima_3 = ( (@formula_pintura.porcentaje_materia_prima_3 / 100) *  @formula_pintura.formula_kg )
     end
-    if @formula_pintura.porcentaje_materia_prima_4 > 0
+    if @formula_pintura.porcentaje_materia_prima_4.blank? == false
       @formula_pintura.kg_materia_prima_4 = ( (@formula_pintura.porcentaje_materia_prima_4 / 100) *  @formula_pintura.formula_kg )
     end
-    if @formula_pintura.porcentaje_materia_prima_5 > 0
+    if @formula_pintura.porcentaje_materia_prima_5.blank? == false
       @formula_pintura.kg_materia_prima_5 = ( (@formula_pintura.porcentaje_materia_prima_5 / 100) *  @formula_pintura.formula_kg )
     end
-    if @formula_pintura.porcentaje_materia_prima_6 > 0
+    if @formula_pintura.porcentaje_materia_prima_6.blank? == false
       @formula_pintura.kg_materia_prima_6 = ( (@formula_pintura.porcentaje_materia_prima_6 / 100) *  @formula_pintura.formula_kg )
     end
-    if @formula_pintura.porcentaje_materia_prima_7 > 0
+    if @formula_pintura.porcentaje_materia_prima_7.blank? == false
       @formula_pintura.kg_materia_prima_7 = ( (@formula_pintura.porcentaje_materia_prima_7 / 100) *  @formula_pintura.formula_kg )
     end
-    if @formula_pintura.porcentaje_materia_prima_8 > 0
+    if @formula_pintura.porcentaje_materia_prima_8.blank? == false
       @formula_pintura.kg_materia_prima_8 = ( (@formula_pintura.porcentaje_materia_prima_8 / 100) *  @formula_pintura.formula_kg )
     end
-    if @formula_pintura.porcentaje_materia_prima_9 > 0
+    if @formula_pintura.porcentaje_materia_prima_9.blank? == false
       @formula_pintura.kg_materia_prima_9 = ( (@formula_pintura.porcentaje_materia_prima_9 / 100) *  @formula_pintura.formula_kg )
     end
-    if @formula_pintura.porcentaje_materia_prima_10 > 0
+    if @formula_pintura.porcentaje_materia_prima_10.blank? == false
       @formula_pintura.kg_materia_prima_10 = ( (@formula_pintura.porcentaje_materia_prima_10 / 100) *  @formula_pintura.formula_kg )
     end
-    if @formula_pintura.porcentaje_materia_prima_11 > 0
+    if @formula_pintura.porcentaje_materia_prima_11.blank? == false
       @formula_pintura.kg_materia_prima_11 = ( (@formula_pintura.porcentaje_materia_prima_11 / 100) *  @formula_pintura.formula_kg )
     end
-    if @formula_pintura.porcentaje_materia_prima_12 > 0
+    if @formula_pintura.porcentaje_materia_prima_12.blank? == false
       @formula_pintura.kg_materia_prima_12 = ( (@formula_pintura.porcentaje_materia_prima_12 / 100) *  @formula_pintura.formula_kg )
     end
-    if @formula_pintura.porcentaje_materia_prima_13 > 0
+    if @formula_pintura.porcentaje_materia_prima_13.blank? == false
       @formula_pintura.kg_materia_prima_13 = ( (@formula_pintura.porcentaje_materia_prima_13 / 100) *  @formula_pintura.formula_kg )
     end
-    if @formula_pintura.porcentaje_materia_prima_14 > 0
+    if @formula_pintura.porcentaje_materia_prima_14.blank? == false
       @formula_pintura.kg_materia_prima_14 = ( (@formula_pintura.porcentaje_materia_prima_14 / 100) *  @formula_pintura.formula_kg )
     end
-    if @formula_pintura.porcentaje_materia_prima_15 > 0
+    if @formula_pintura.porcentaje_materia_prima_15.blank? == false
       @formula_pintura.kg_materia_prima_15 = ( (@formula_pintura.porcentaje_materia_prima_15 / 100) *  @formula_pintura.formula_kg )
     end
-    if @formula_pintura.porcentaje_materia_prima_16 > 0
+    if @formula_pintura.porcentaje_materia_prima_16.blank? == false
       @formula_pintura.kg_materia_prima_16 = ( (@formula_pintura.porcentaje_materia_prima_16 / 100) *  @formula_pintura.formula_kg )
     end
-    if @formula_pintura.porcentaje_materia_prima_17 > 0
+    if @formula_pintura.porcentaje_materia_prima_17.blank? == false
       @formula_pintura.kg_materia_prima_17 = ( (@formula_pintura.porcentaje_materia_prima_17 / 100) *  @formula_pintura.formula_kg )
     end
-    if @formula_pintura.porcentaje_materia_prima_18 > 0
+    if @formula_pintura.porcentaje_materia_prima_18.blank? == false
       @formula_pintura.kg_materia_prima_18 = ( (@formula_pintura.porcentaje_materia_prima_18 / 100) *  @formula_pintura.formula_kg )
     end
-    if @formula_pintura.porcentaje_materia_prima_19 > 0
+    if @formula_pintura.porcentaje_materia_prima_19.blank? == false
       @formula_pintura.kg_materia_prima_19 = ( (@formula_pintura.porcentaje_materia_prima_19 / 100) *  @formula_pintura.formula_kg )
     end
-    if @formula_pintura.porcentaje_materia_prima_20 > 0
+    if @formula_pintura.porcentaje_materia_prima_20.blank? == false
       @formula_pintura.kg_materia_prima_20 = ( (@formula_pintura.porcentaje_materia_prima_20 / 100) *  @formula_pintura.formula_kg )
     end
     
@@ -158,7 +163,7 @@ class FormulaPinturasController < ApplicationController
 
     respond_to do |format|
       if @formula_pintura.save
-        format.html { redirect_to @formula_pintura, notice: 'Formula pintura was successfully created.' }
+        format.html { redirect_to @formula_pintura, notice: 'Formula fue creada exitosamente.' }
         format.json { render :show, status: :created, location: @formula_pintura }
       else
         format.html { render :new }

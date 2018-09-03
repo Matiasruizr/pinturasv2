@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%= wicked_pdf_stylesheet_link_tag 'pdf' %>
+  <meta charset="utf-8">
+</head>
+<body>
+
+<style>
+  table {
+    width: 100%;
+    padding: 10px 0;
+    font-family:'Arial';
+    text-transform: uppercase;
+    font-size:15px;
+
+  }
+  h1{
+     font-family:'Arial';
+    width:100%;
+       clear:both;
+    font-size:19px;
+   border: 1px solid black;
+    padding:5px;
+    background: #536ae0;
+     text-align:center;
+    color: white;
+    margin-bottom:0px;
+  }
+  table th{
+    border: 1px solid black;
+    padding:5px;
+    background: #536ae0;
+     text-align:center;
+    color: white;
+    margin:0!important;
+  }
+   table td{
+   margin: 0;
+     margin:0!important;
+
+   padding: 3px;
+    border: 1px solid black;
+    text-align:center;
+  }
+img{
+  float:left;
+}
+h5{
+  float:right;
+      font-family:'Arial';
+      clear:both;
+}
+</style>
+
+<% @formula_pintura.formula_kg = 100 %>
+<% calculo_kg_formula(@formula_pintura) %>
+<% calculo_costo(@formula_pintura) %>
+        <%= wicked_pdf_image_tag 'logoandescolor.png' %>
+       
+        <h5> Fecha de emisión de reporte: <%= Time.now %></h5>
+<table class="ot" cellspacing="0">
+
+
+
+  <tr>
+    <td> formula_pintura kilos</td>
+    <td>  <%= @formula_pintura.formula_kg %></td>
+  </tr>
+
+
+
+  <tr>
+    <td>formula_pintura </td>
+    <td><%= @formula_pintura.descripcion %></td>
+  </tr>
+
+</table>
+
+<table class="formula_pintura" cellspacing="0">
+  <tr>
+    <th>Item </th>
+    <th> Materia Prima </th>
+    <th> % </th>
+    <th> kg </th>
+    <th> Costo Materia (usd)</th>
+    <th> Costo Materia (clp)</th>
+    <th> Costo total (usd)</th>
+    <th> Costo total (clp)</th>
+  </tr>
+  <tr>
+    <td> 1 </td>
+    <td> <%= @formula_pintura.materia_prima_1 %> </td>
+    <td> <%= @formula_pintura.porcentaje_materia_prima_1 %></td>
+    <td> <%= @formula_pintura.kg_materia_prima_1.to_f.round(2) %> </td>
+    <td> <%= @formula_pintura.costo_kg_materia_prima_1.to_f.round(2) %></td>
+    <td> <%= @formula_pintura.costo_kg_materia_prima_1.to_f.round(2) * $dolar %></td>
+    <td> <%= @formula_pintura.costo_total_materia_prima_1.to_f.round(2) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_total_materia_prima_1.to_f.round(2) * $dolar) %> </td>
+  </tr>
+    <tr>
+    <td> 2 </td>
+    <td> <%= @formula_pintura.materia_prima_2 %> </td>
+    <td> <%= @formula_pintura.porcentaje_materia_prima_2 %></td>
+    <td> <%= @formula_pintura.kg_materia_prima_2.to_f.round(2)  %> </td>
+    <td> <%= @formula_pintura.costo_kg_materia_prima_2.to_f.round(2) %></td>
+     <td> <%= @formula_pintura.costo_kg_materia_prima_2.to_f.round(2) * $dolar %></td>
+     <td> <%= @formula_pintura.costo_total_materia_prima_2.to_f.round(2) %> </td>
+     <td> <%=  number_to_currency(@formula_pintura.costo_total_materia_prima_2.to_f.round(2) * $dolar ) %> </td>
+  </tr>
+    <tr>
+    <td> 3 </td>
+    <td> <%= @formula_pintura.materia_prima_3 %> </td>
+    <td> <%= @formula_pintura.porcentaje_materia_prima_3 %></td>
+    <td> <%= @formula_pintura.kg_materia_prima_3.to_f.round(2) %> </td>
+      <td> <%= @formula_pintura.costo_kg_materia_prima_3.to_f.round(2) %></td>
+       <td> <%= @formula_pintura.costo_kg_materia_prima_3.to_f.round(2) * $dolar %></td>
+     <td> <%= @formula_pintura.costo_total_materia_prima_3.to_f.round(2) %> </td>
+     <td> <%=  number_to_currency( @formula_pintura.costo_total_materia_prima_3.to_f.round(2) * $dolar) %> </td>
+  </tr>
+    <tr>
+    <td> 4 </td>
+    <td> <%= @formula_pintura.materia_prima_4 %> </td>
+    <td> <%= @formula_pintura.porcentaje_materia_prima_4 %></td>
+    <td> <%= @formula_pintura.kg_materia_prima_4.to_f.round(2) %> </td>
+      <td> <%= @formula_pintura.costo_kg_materia_prima_4.to_f.round(2) %></td>
+       <td> <%= @formula_pintura.costo_kg_materia_prima_4.to_f.round(2) * $dolar %></td>
+     <td> <%= @formula_pintura.costo_total_materia_prima_4.to_f.round(2) %> </td>
+     <td> <%=   number_to_currency( @formula_pintura.costo_total_materia_prima_4.to_f.round(2) * $dolar ) %> </td>
+  </tr>
+    <tr>
+    <td> 5 </td>
+    <td> <%= @formula_pintura.materia_prima_5 %> </td>
+    <td> <%= @formula_pintura.porcentaje_materia_prima_5 %></td>
+    <td> <%= @formula_pintura.kg_materia_prima_5.to_f.round(2) %> </td>
+      <td> <%= @formula_pintura.costo_kg_materia_prima_5.to_f.round(2) %></td>
+       <td> <%= @formula_pintura.costo_kg_materia_prima_5.to_f.round(2) * $dolar %></td>
+     <td> <%= @formula_pintura.costo_total_materia_prima_5.to_f.round(2) %> </td>
+     <td> <%=  number_to_currency( @formula_pintura.costo_total_materia_prima_5.to_f.round(2) * $dolar ) %> </td>
+  </tr>
+    <tr>
+    <td> 6 </td>
+    <td> <%= @formula_pintura.materia_prima_6 %> </td>
+    <td> <%= @formula_pintura.porcentaje_materia_prima_6 %></td>
+    <td> <%= @formula_pintura.kg_materia_prima_6.to_f.round(2) %> </td>
+      <td> <%= @formula_pintura.costo_kg_materia_prima_6.to_f.round(2) %></td>
+       <td> <%= @formula_pintura.costo_kg_materia_prima_6.to_f.round(2) * $dolar %></td>
+     <td> <%= @formula_pintura.costo_total_materia_prima_6.to_f.round(2) %> </td>
+     <td> <%=  number_to_currency( @formula_pintura.costo_total_materia_prima_6.to_f.round(2) * $dolar ) %> </td>
+  </tr>
+    <tr>
+    <td> 7 </td>
+    <td> <%= @formula_pintura.materia_prima_7 %> </td>
+    <td> <%= @formula_pintura.porcentaje_materia_prima_7 %></td>
+    <td> <%= @formula_pintura.kg_materia_prima_7.to_f.round(2) %> </td>
+      <td> <%= @formula_pintura.costo_kg_materia_prima_7.to_f.round(2) %></td>
+       <td> <%= @formula_pintura.costo_kg_materia_prima_7.to_f.round(2) * $dolar %></td>
+     <td> <%= @formula_pintura.costo_total_materia_prima_7.to_f.round(2) %> </td>
+     <td> <%=  number_to_currency( @formula_pintura.costo_total_materia_prima_7.to_f.round(2) * $dolar ) %> </td>
+  </tr>
+    <tr>
+    <td> 8 </td>
+    <td> <%= @formula_pintura.materia_prima_8 %> </td>
+    <td> <%= @formula_pintura.porcentaje_materia_prima_8 %></td>
+    <td> <%= @formula_pintura.kg_materia_prima_8.to_f.round(2) %> </td>
+      <td> <%= @formula_pintura.costo_kg_materia_prima_8.to_f.round(2) %></td>
+       <td> <%= @formula_pintura.costo_kg_materia_prima_8.to_f.round(2) * $dolar %></td>
+    <td> <%= @formula_pintura.costo_total_materia_prima_8.to_f.round(2) %> </td>
+    <td> <%=  number_to_currency( @formula_pintura.costo_total_materia_prima_8.to_f.round(2) * $dolar ) %> </td>
+  </tr>
+    <tr>
+    <td> 9 </td>
+    <td> <%= @formula_pintura.materia_prima_9 %> </td>
+    <td> <%= @formula_pintura.porcentaje_materia_prima_9 %></td>
+    <td> <%= @formula_pintura.kg_materia_prima_9.to_f.round(2) %> </td>
+      <td> <%= @formula_pintura.costo_kg_materia_prima_9.to_f.round(2) %></td>
+       <td> <%= @formula_pintura.costo_kg_materia_prima_9.to_f.round(2) * $dolar %></td>
+     <td> <%= @formula_pintura.costo_total_materia_prima_9.to_f.round(2) %> </td>
+     <td> <%=  number_to_currency( @formula_pintura.costo_total_materia_prima_9.to_f.round(2) * $dolar ) %> </td>
+  </tr>
+    <tr>
+    <td> 10 </td>
+    <td> <%= @formula_pintura.materia_prima_10 %> </td>
+    <td> <%= @formula_pintura.porcentaje_materia_prima_10 %></td>
+    <td> <%= @formula_pintura.kg_materia_prima_10.to_f.round(2) %> </td>
+     <td> <%= @formula_pintura.costo_kg_materia_prima_10.to_f.round(2) * $dolar %></td>
+      <td> <%= @formula_pintura.costo_kg_materia_prima_10.to_f.round(2) %></td>
+     <td> <%= @formula_pintura.costo_total_materia_prima_10.to_f.round(2) %> </td>
+     <td> <%=  number_to_currency( @formula_pintura.costo_total_materia_prima_10.to_f.round(2) * $dolar ) %> </td>
+  </tr>
+    <tr>
+    <td> 11 </td>
+    <td> <%= @formula_pintura.materia_prima_11 %> </td>
+    <td> <%= @formula_pintura.porcentaje_materia_prima_11 %></td>
+    <td> <%= @formula_pintura.kg_materia_prima_11.to_f.round(2) %> </td>
+      <td> <%= @formula_pintura.costo_kg_materia_prima_11.to_f.round(2) %></td>
+       <td> <%= @formula_pintura.costo_kg_materia_prima_11.to_f.round(2) * $dolar %></td>
+     <td> <%= @formula_pintura.costo_total_materia_prima_11.to_f.round(2) %> </td>
+     <td> <%=  number_to_currency( @formula_pintura.costo_total_materia_prima_11.to_f.round(2) * $dolar ) %> </td>
+  </tr>
+    <tr>
+    <td> 12 </td>
+    <td> <%= @formula_pintura.materia_prima_12 %> </td>
+    <td> <%= @formula_pintura.porcentaje_materia_prima_12 %></td>
+    <td> <%= @formula_pintura.kg_materia_prima_12.to_f.round(2) %> </td>
+      <td> <%= @formula_pintura.costo_kg_materia_prima_12.to_f.round(2) %></td>
+       <td> <%= @formula_pintura.costo_kg_materia_prima_12.to_f.round(2) * $dolar %></td>
+     <td> <%= @formula_pintura.costo_total_materia_prima_12.to_f.round(2) %> </td>
+     <td> <%=   number_to_currency( @formula_pintura.costo_total_materia_prima_12.to_f.round(2) * $dolar ) %> </td>
+  </tr>
+    <tr>
+    <td> 13 </td>
+    <td> <%= @formula_pintura.materia_prima_13 %> </td>
+    <td> <%= @formula_pintura.porcentaje_materia_prima_13 %></td>
+    <td> <%= @formula_pintura.kg_materia_prima_13.to_f.round(2) %> </td>
+      <td> <%= @formula_pintura.costo_kg_materia_prima_13.to_f.round(2) %></td>
+       <td> <%= @formula_pintura.costo_kg_materia_prima_13.to_f.round(2) * $dolar %></td>
+     <td> <%= @formula_pintura.costo_total_materia_prima_13.to_f.round(2) %> </td>
+     <td> <%=  number_to_currency(@formula_pintura.costo_total_materia_prima_13.to_f.round(2) * $dolar ) %> </td>
+  </tr>
+    <tr>
+    <td> 14 </td>
+    <td> <%= @formula_pintura.materia_prima_14 %> </td>
+    <td> <%= @formula_pintura.porcentaje_materia_prima_14 %></td>
+    <td> <%= @formula_pintura.kg_materia_prima_14.to_f.round(2) %> </td>
+      <td> <%= @formula_pintura.costo_kg_materia_prima_14.to_f.round(2) %></td>
+       <td> <%= @formula_pintura.costo_kg_materia_prima_14.to_f.round(2) * $dolar %></td>
+     <td> <%= @formula_pintura.costo_total_materia_prima_14.to_f.round(2) %> </td>
+     <td> <%=  number_to_currency(@formula_pintura.costo_total_materia_prima_14.to_f.round(2) * $dolar ) %> </td>
+  </tr>
+    <tr>
+    <td> 15 </td>
+    <td> <%= @formula_pintura.materia_prima_15 %> </td>
+    <td> <%= @formula_pintura.porcentaje_materia_prima_15 %></td>
+    <td> <%= @formula_pintura.kg_materia_prima_15.to_f.round(2) %> </td>
+      <td> <%= @formula_pintura.costo_kg_materia_prima_15.to_f.round(2) %></td>
+       <td> <%= @formula_pintura.costo_kg_materia_prima_15.to_f.round(2) * $dolar %></td>
+     <td> <%= @formula_pintura.costo_total_materia_prima_15.to_f.round(2) %> </td>
+     <td> <%=  number_to_currency(@formula_pintura.costo_total_materia_prima_15.to_f.round(2) * $dolar) %> </td>
+  </tr>
+    <tr>
+    <td> 16 </td>
+    <td> <%= @formula_pintura.materia_prima_16 %> </td>
+    <td> <%= @formula_pintura.porcentaje_materia_prima_16 %></td>
+    <td> <%= @formula_pintura.kg_materia_prima_16.to_f.round(2) %> </td>
+      <td> <%= @formula_pintura.costo_kg_materia_prima_16.to_f.round(2) %></td>
+       <td> <%= @formula_pintura.costo_kg_materia_prima_16.to_f.round(2) * $dolar %></td>
+     <td> <%= @formula_pintura.costo_total_materia_prima_16.to_f.round(2) %> </td>
+     <td> <%=  number_to_currency(@formula_pintura.costo_total_materia_prima_16.to_f.round(2) * $dolar) %> </td>
+  </tr>
+    <tr>
+    <td> 17 </td>
+    <td> <%= @formula_pintura.materia_prima_17 %> </td>
+    <td> <%= @formula_pintura.porcentaje_materia_prima_17 %></td>
+    <td> <%= @formula_pintura.kg_materia_prima_17.to_f.round(2) %> </td>
+     <td> <%= @formula_pintura.costo_kg_materia_prima_17.to_f.round(2) * $dolar %></td>
+      <td> <%= @formula_pintura.costo_kg_materia_prima_17.to_f.round(2) %></td>
+     <td> <%= @formula_pintura.costo_total_materia_prima_17.to_f.round(2) %> </td>
+     <td> <%=  number_to_currency(@formula_pintura.costo_total_materia_prima_17.to_f.round(2) * $dolar ) %> </td>
+  </tr>
+    <tr>
+    <td> 18 </td>
+    <td> <%= @formula_pintura.materia_prima_18 %> </td>
+    <td> <%= @formula_pintura.porcentaje_materia_prima_18 %></td>
+    <td> <%= @formula_pintura.kg_materia_prima_18.to_f.round(2) %> </td>
+      <td> <%= @formula_pintura.costo_kg_materia_prima_18.to_f.round(2) %></td>
+       <td> <%= @formula_pintura.costo_kg_materia_prima_18.to_f.round(2) * $dolar %></td>
+     <td> <%= @formula_pintura.costo_total_materia_prima_18.to_f.round(2) %> </td>
+     <td> <%=  number_to_currency( @formula_pintura.costo_total_materia_prima_18.to_f.round(2) * $dolar )%> </td>
+  </tr>
+    <tr>
+    <td> 19 </td>
+    <td> <%= @formula_pintura.materia_prima_19 %> </td>
+    <td> <%= @formula_pintura.porcentaje_materia_prima_19 %></td>
+    <td> <%= @formula_pintura.kg_materia_prima_19.to_f.round(2) %> </td>
+      <td> <%= @formula_pintura.costo_kg_materia_prima_19.to_f.round(2) %></td>
+       <td> <%= @formula_pintura.costo_kg_materia_prima_19.to_f.round(2) * $dolar %></td>
+     <td> <%= @formula_pintura.costo_total_materia_prima_19.to_f.round(2) %> </td>
+     <td> <%= number_to_currency( @formula_pintura.costo_total_materia_prima_19.to_f.round(2) * $dolar ) %> </td>
+  </tr>
+    <tr>
+    <td> 20 </td>
+    <td> <%= @formula_pintura.materia_prima_20 %> </td>
+    <td> <%= @formula_pintura.porcentaje_materia_prima_20 %></td>
+    <td> <%= @formula_pintura.kg_materia_prima_20.to_f.round(2) %> </td>
+      <td> <%= @formula_pintura.costo_kg_materia_prima_20.to_f.round(2) %></td>
+       <td> <%= @formula_pintura.costo_kg_materia_prima_20.to_f.round(2) * $dolar %></td>
+     <td> <%= @formula_pintura.costo_total_materia_prima_20.to_f.round(2) %> </td>
+     <td> <%=  number_to_currency(@formula_pintura.costo_total_materia_prima_20.to_f.round(2) * $dolar) %> </td>
+  </tr>
+
+</table>
+
+
+
+</body>
+</html>

@@ -20,10 +20,10 @@
          <td><%= formula_pintura.descripcion %></td>
         <td><%= formula_pintura.codigo_formula %></td>
        
-
-        <td><%= link_to 'Ver formula', formula_pintura %></td>
-        <td><%= link_to 'Editar', edit_formula_pintura_path(formula_pintura) %></td>
-        <td><%= link_to 'Eliminar', formula_pintura, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+        <td  class="boton"><%= link_to "pdf", formula_pintura_path(formula_pintura, format: :pdf)  %></td>
+        <td class="boton"><%= link_to 'Ver', formula_pintura %></td>
+        <td class="boton"><%= link_to 'Editar', edit_formula_pintura_path(formula_pintura) %></td>
+        <td class="boton"><%= link_to 'Eliminar', formula_pintura, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>

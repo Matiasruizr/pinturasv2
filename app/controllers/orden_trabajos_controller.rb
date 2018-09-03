@@ -1,4 +1,6 @@
+
 class OrdenTrabajosController < ApplicationController
+  include ActionView::Helpers::NumberHelper
   before_action :set_orden_trabajo, only: [:show, :edit, :update, :destroy]
 
 
@@ -19,7 +21,7 @@ class OrdenTrabajosController < ApplicationController
   # GET /orden_trabajos/1.json
   def show
     respond_to do |format|
-      format.html
+      format.html  
       format.json
       format.pdf {render template: 'orden_trabajos/reporte', pdf: 'reporte'}
     end

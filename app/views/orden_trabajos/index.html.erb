@@ -2,6 +2,8 @@
 
 <h1>Orden Trabajos</h1>
 
+
+
 <table>
   <thead>
     <tr>
@@ -32,9 +34,10 @@
         <td><%= orden_trabajo.fecha %></td>
         <td><%= orden_trabajo.muestra_color %></td>
         <td><%= orden_trabajo.colorista_a_cargo %></td>
-        <td><%= link_to 'Show', orden_trabajo %></td>
-        <td><%= link_to 'Edit', edit_orden_trabajo_path(orden_trabajo) %></td>
-        <td><%= link_to 'Destroy', orden_trabajo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "pdf", orden_trabajo_url(orden_trabajo, format: :pdf)  %></td>
+        <td><%= link_to 'Ver', orden_trabajo %></td>
+        <td><%= link_to 'Editar', edit_orden_trabajo_path(orden_trabajo) %></td>
+        <td><%= link_to 'Eliminar', orden_trabajo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

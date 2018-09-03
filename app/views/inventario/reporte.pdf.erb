@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%= wicked_pdf_stylesheet_link_tag 'pdf' %>
+  <meta charset="utf-8">
+</head>
+<body>
+
+<style>
+  table {
+    width: 100%;
+    padding: 10px 0;
+    font-family:'Arial';
+    text-transform: uppercase;
+    font-size:15px;
+
+  }
+  h1{
+     font-family:'Arial';
+    width:100%;
+       clear:both;
+    font-size:19px;
+   border: 1px solid black;
+    padding:5px;
+    background: #536ae0;
+     text-align:center;
+    color: white;
+    margin-bottom:0px;
+  }
+  table th{
+    border: 1px solid black;
+    padding:5px;
+    background: #536ae0;
+     text-align:center;
+    color: white;
+    margin:0!important;
+  }
+   table td{
+   margin: 0;
+     margin:0!important;
+
+   padding: 3px;
+    border: 1px solid black;
+    text-align:center;
+  }
+img{
+  float:left;
+}
+h5{
+  float:right;
+      font-family:'Arial';
+      clear:both;
+}
+</style>
+
+        <%= wicked_pdf_image_tag 'logoandescolor.png' %>
+       
+        <h5> Fecha de emisión de reporte: <%= Time.now %></h5>
+
+
+
+<table style="clear:both">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+       <th>Marca</th>
+      <th>Inventario supuesto</th>
+      <th>Inventario real</th>
+    </tr>
+  </thead>
+
+ <tbody>
+   <% $totalInventario = 0 %>
+    <% @materia_primas.each do |materias_prima| %>
+      <tr>
+        <td><%= materias_prima.nombre %></td>
+        <td><%= materias_prima.marca %></td>
+        <td><%= materias_prima.cantidad.to_i %> kilos</td>
+        <td></td>
+       
+      </tr>
+         <% $totalInventario += materias_prima.precio %>
+    <% end %>
+  </tbody>
+
+</table>
+
+
+</body>
+</html>
