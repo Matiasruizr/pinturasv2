@@ -5,12 +5,22 @@ module ApplicationHelper
     end
    
   
-    sbif = SBIF.new(:api_key => "f2b9f507ece8466a4720b632f70e8f543e01f771")
-    if sbif.dolar != nil
-        $dolar = sbif.dolar
-    else
-        $dolar = 650
-    end
+   # sbif = SBIF.new(:api_key => "f2b9f507ece8466a4720b632f70e8f543e01f771")
+
+
+    #if sbif.dolar != nil
+     #   $dolar = sbif.dolar
+    #else
+     #   $dolar = 650
+    #end
+
+
+    url = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar?apikey=f2b9f507ece8466a4720b632f70e8f543e01f771&formato=json'
+
+    response = HTTParty.get(url, :verify => false )
+    $dolar  = response.parsed_response["Dolares"][0]["Valor"].to_f
+
+   
 
     def calculo_costo(formula_c)
         formula_c.costo_total_materia_prima_1 =  formula_c.costo_kg_materia_prima_1.to_f *  formula_c.kg_materia_prima_1.to_f
