@@ -16,4 +16,4 @@
    # config/initializers/wicked_pdf.rb 
 #}
 
-WickedPdf.config = { :exe_path => '/bin/wkhtmltopdf' }
+WickedPdf.config = { :exe_path => "#{Rails.root}/bin/wkhtmltopdf" }
