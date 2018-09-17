@@ -8,8 +8,12 @@
 #
 # https://github.com/mileszs/wicked_pdf/blob/master/README.md
 
-WickedPdf.config = {
+#WickedPdf.config = {
    #:wkhtmltopdf => '/usr/local/bin/wkhtmltopdf',
-    #:layout => "pdf.html",
-  exe_path: 'C://Program Files/wkhtmltopdf/bin/wkhtmltopdf.exe'
-}
+   #:layout => "pdf.html",
+ #  exe_path: 'C://Program Files/wkhtmltopdf/bin/wkhtmltopdf.exe'
+
+   # config/initializers/wicked_pdf.rb 
+#}
+
+WickedPdf.config = { :exe_path => '/bin/wkhtmltopdf' }
