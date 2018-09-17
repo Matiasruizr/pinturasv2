@@ -1,17 +1,45 @@
+ <%= form_with do |f| %>
+        <div class="field">
+            <%= f.label 'Cantidad' %>
+            <%= f.select(:veces,  [[ '1', 1], [ '2', 2], [ '3', 3], [ '4', 4], [ '5', 5], [ '6', 6], [ '7', 7], [ '8', 8], [ '9', 9], [ '10', 10] ]  ) %>
+        </div>
+
+        <div class="actions">
+            <%= f.submit(:cantidad_materias, :id => 'vecesA') %>
+        </div>
+    
+    <% end %>
+
 <%= form_with(model: materias_prima, local: true) do |form| %>
+    <% if $veces == nil %>
+    <%    $veces = 0 %>
+    <% end %>
 
-     <div class="field">
-        <%= form.label :nombre %>
-         <%= form.select(:nombre, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] }  ) %>
-    </div>
+<div class="actualizar">
+    <% 10.times do |t| %>
+   
+    <% i = t + 1 %>
+        <div id="<%= i %>">
+            <div class="field">
+                <%= form.label :nombre.to_s+' materia prima '+i.to_s %> 
+            
+                <%= form.select(:nombre.to_s + i.to_s , MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] }  ) %>
+            </div>
 
-    <div class="field">
-        <%= form.label :cantidad %> (Kilos)
-        <%= form.text_field :cantidad %>
-    </div>
-
-
-    <div class="actions">
-        <%= form.submit %>
-    </div>
+            <div class="field">
+                <%= form.label :cantidad.to_s+' materia prima  '+i.to_s+' (kilos)' %> 
+                <%= form.text_field :cantidad.to_s+i.to_s , value: "0"%>
+            </div>
+        </div>
+    <% end %>
+       
+        <div class="actions">
+            <%= form.submit %>
+        
+        </div>
+    
+</div>
 <% end %>
+<h6 id="probando">
+  <%= $veces %>
+</h6>

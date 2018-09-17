@@ -54,6 +54,7 @@ h5{
 </style>
 
 <% @formula_pintura.formula_kg = 100 %>
+<% calculo_total(@formula_pintura) %>
 <% calculo_kg_formula(@formula_pintura) %>
 <% calculo_costo(@formula_pintura) %>
         <%= wicked_pdf_image_tag 'logoandescolor.png' %>
@@ -61,17 +62,20 @@ h5{
         <h5> Fecha de emisión de reporte: <%= Time.now %></h5>
 <table class="ot" cellspacing="0">
 
-
+  <tr>
+    <td>Dolar considerado</td>
+    <td>  <%= $dolar %></td>
+  </tr>
 
   <tr>
-    <td> formula_pintura kilos</td>
+    <td>Kilos considerados</td>
     <td>  <%= @formula_pintura.formula_kg %></td>
   </tr>
 
 
 
   <tr>
-    <td>formula_pintura </td>
+    <td>formula pintura </td>
     <td><%= @formula_pintura.descripcion %></td>
   </tr>
 
@@ -81,214 +85,224 @@ h5{
   <tr>
     <th>Item </th>
     <th> Materia Prima </th>
+    <th> Costo Kilogramo (usd)</th>
     <th> % </th>
     <th> kg </th>
-    <th> Costo Materia (usd)</th>
     <th> Costo Materia (clp)</th>
     <th> Costo total (usd)</th>
     <th> Costo total (clp)</th>
+
+ 
+
   </tr>
   <tr>
     <td> 1 </td>
     <td> <%= @formula_pintura.materia_prima_1 %> </td>
+    <td> <%= @formula_pintura.costo_kg_materia_prima_1.to_f.round(2) %></td>
     <td> <%= @formula_pintura.porcentaje_materia_prima_1 %></td>
     <td> <%= @formula_pintura.kg_materia_prima_1.to_f.round(2) %> </td>
-    <td> <%= @formula_pintura.costo_kg_materia_prima_1.to_f.round(2) %></td>
-    <td> <%= @formula_pintura.costo_kg_materia_prima_1.to_f.round(2) * $dolar %></td>
+    <td> <%= number_to_currency(@formula_pintura.costo_kg_materia_prima_1.to_f.round(2) * $dolar, options= {:precision => 0 ,  :delimiter => '.',:delimiter => '.' } ) %></td>
     <td> <%= @formula_pintura.costo_total_materia_prima_1.to_f.round(2) %> </td>
-    <td> <%= number_to_currency(@formula_pintura.costo_total_materia_prima_1.to_f.round(2) * $dolar) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_total_materia_prima_1.to_f.round(2) * $dolar , options= {:precision => 0 ,  :delimiter => '.' } ) %> </td>
   </tr>
     <tr>
-    <td> 2 </td>
-    <td> <%= @formula_pintura.materia_prima_2 %> </td>
-    <td> <%= @formula_pintura.porcentaje_materia_prima_2 %></td>
-    <td> <%= @formula_pintura.kg_materia_prima_2.to_f.round(2)  %> </td>
+      <td> 1 </td>
+     <td> <%= @formula_pintura.materia_prima_2 %> </td>
     <td> <%= @formula_pintura.costo_kg_materia_prima_2.to_f.round(2) %></td>
-     <td> <%= @formula_pintura.costo_kg_materia_prima_2.to_f.round(2) * $dolar %></td>
-     <td> <%= @formula_pintura.costo_total_materia_prima_2.to_f.round(2) %> </td>
-     <td> <%=  number_to_currency(@formula_pintura.costo_total_materia_prima_2.to_f.round(2) * $dolar ) %> </td>
+    <td> <%= @formula_pintura.porcentaje_materia_prima_2 %></td>
+    <td> <%= @formula_pintura.kg_materia_prima_2.to_f.round(2) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_kg_materia_prima_2.to_f.round(2) * $dolar, options= {:precision => 0 ,  :delimiter => '.',:delimiter => '.' } ) %></td>
+    <td> <%= @formula_pintura.costo_total_materia_prima_2.to_f.round(2) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_total_materia_prima_2.to_f.round(2) * $dolar , options= {:precision => 0 ,  :delimiter => '.' } ) %> </td>
   </tr>
     <tr>
     <td> 3 </td>
     <td> <%= @formula_pintura.materia_prima_3 %> </td>
+    <td> <%= @formula_pintura.costo_kg_materia_prima_3.to_f.round(2) %></td>
     <td> <%= @formula_pintura.porcentaje_materia_prima_3 %></td>
     <td> <%= @formula_pintura.kg_materia_prima_3.to_f.round(2) %> </td>
-      <td> <%= @formula_pintura.costo_kg_materia_prima_3.to_f.round(2) %></td>
-       <td> <%= @formula_pintura.costo_kg_materia_prima_3.to_f.round(2) * $dolar %></td>
-     <td> <%= @formula_pintura.costo_total_materia_prima_3.to_f.round(2) %> </td>
-     <td> <%=  number_to_currency( @formula_pintura.costo_total_materia_prima_3.to_f.round(2) * $dolar) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_kg_materia_prima_3.to_f.round(2) * $dolar, options= {:precision => 0 ,  :delimiter => '.',:delimiter => '.' } ) %></td>
+    <td> <%= @formula_pintura.costo_total_materia_prima_3.to_f.round(2) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_total_materia_prima_3.to_f.round(2) * $dolar , options= {:precision => 0 ,  :delimiter => '.' } ) %> </td>
   </tr>
     <tr>
     <td> 4 </td>
     <td> <%= @formula_pintura.materia_prima_4 %> </td>
+    <td> <%= @formula_pintura.costo_kg_materia_prima_4.to_f.round(2) %></td>
     <td> <%= @formula_pintura.porcentaje_materia_prima_4 %></td>
     <td> <%= @formula_pintura.kg_materia_prima_4.to_f.round(2) %> </td>
-      <td> <%= @formula_pintura.costo_kg_materia_prima_4.to_f.round(2) %></td>
-       <td> <%= @formula_pintura.costo_kg_materia_prima_4.to_f.round(2) * $dolar %></td>
-     <td> <%= @formula_pintura.costo_total_materia_prima_4.to_f.round(2) %> </td>
-     <td> <%=   number_to_currency( @formula_pintura.costo_total_materia_prima_4.to_f.round(2) * $dolar ) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_kg_materia_prima_4.to_f.round(2) * $dolar, options= {:precision => 0 ,  :delimiter => '.',:delimiter => '.' } ) %></td>
+    <td> <%= @formula_pintura.costo_total_materia_prima_4.to_f.round(2) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_total_materia_prima_4.to_f.round(2) * $dolar , options= {:precision => 0 ,  :delimiter => '.' } ) %> </td>
   </tr>
     <tr>
-    <td> 5 </td>
+   <td> 5 </td>
     <td> <%= @formula_pintura.materia_prima_5 %> </td>
+    <td> <%= @formula_pintura.costo_kg_materia_prima_5.to_f.round(2) %></td>
     <td> <%= @formula_pintura.porcentaje_materia_prima_5 %></td>
     <td> <%= @formula_pintura.kg_materia_prima_5.to_f.round(2) %> </td>
-      <td> <%= @formula_pintura.costo_kg_materia_prima_5.to_f.round(2) %></td>
-       <td> <%= @formula_pintura.costo_kg_materia_prima_5.to_f.round(2) * $dolar %></td>
-     <td> <%= @formula_pintura.costo_total_materia_prima_5.to_f.round(2) %> </td>
-     <td> <%=  number_to_currency( @formula_pintura.costo_total_materia_prima_5.to_f.round(2) * $dolar ) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_kg_materia_prima_5.to_f.round(2) * $dolar, options= {:precision => 0 ,  :delimiter => '.',:delimiter => '.' } ) %></td>
+    <td> <%= @formula_pintura.costo_total_materia_prima_5.to_f.round(2) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_total_materia_prima_5.to_f.round(2) * $dolar , options= {:precision => 0 ,  :delimiter => '.' } ) %> </td>
   </tr>
     <tr>
     <td> 6 </td>
     <td> <%= @formula_pintura.materia_prima_6 %> </td>
+    <td> <%= @formula_pintura.costo_kg_materia_prima_6.to_f.round(2) %></td>
     <td> <%= @formula_pintura.porcentaje_materia_prima_6 %></td>
     <td> <%= @formula_pintura.kg_materia_prima_6.to_f.round(2) %> </td>
-      <td> <%= @formula_pintura.costo_kg_materia_prima_6.to_f.round(2) %></td>
-       <td> <%= @formula_pintura.costo_kg_materia_prima_6.to_f.round(2) * $dolar %></td>
-     <td> <%= @formula_pintura.costo_total_materia_prima_6.to_f.round(2) %> </td>
-     <td> <%=  number_to_currency( @formula_pintura.costo_total_materia_prima_6.to_f.round(2) * $dolar ) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_kg_materia_prima_6.to_f.round(2) * $dolar, options= {:precision => 0 ,  :delimiter => '.',:delimiter => '.' } ) %></td>
+    <td> <%= @formula_pintura.costo_total_materia_prima_6.to_f.round(2) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_total_materia_prima_6.to_f.round(2) * $dolar , options= {:precision => 0 ,  :delimiter => '.' } ) %> </td>
   </tr>
     <tr>
     <td> 7 </td>
     <td> <%= @formula_pintura.materia_prima_7 %> </td>
+    <td> <%= @formula_pintura.costo_kg_materia_prima_7.to_f.round(2) %></td>
     <td> <%= @formula_pintura.porcentaje_materia_prima_7 %></td>
     <td> <%= @formula_pintura.kg_materia_prima_7.to_f.round(2) %> </td>
-      <td> <%= @formula_pintura.costo_kg_materia_prima_7.to_f.round(2) %></td>
-       <td> <%= @formula_pintura.costo_kg_materia_prima_7.to_f.round(2) * $dolar %></td>
-     <td> <%= @formula_pintura.costo_total_materia_prima_7.to_f.round(2) %> </td>
-     <td> <%=  number_to_currency( @formula_pintura.costo_total_materia_prima_7.to_f.round(2) * $dolar ) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_kg_materia_prima_7.to_f.round(2) * $dolar, options= {:precision => 0 ,  :delimiter => '.',:delimiter => '.' } ) %></td>
+    <td> <%= @formula_pintura.costo_total_materia_prima_7.to_f.round(2) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_total_materia_prima_7.to_f.round(2) * $dolar , options= {:precision => 0 ,  :delimiter => '.' } ) %> </td>
   </tr>
     <tr>
     <td> 8 </td>
     <td> <%= @formula_pintura.materia_prima_8 %> </td>
+    <td> <%= @formula_pintura.costo_kg_materia_prima_8.to_f.round(2) %></td>
     <td> <%= @formula_pintura.porcentaje_materia_prima_8 %></td>
     <td> <%= @formula_pintura.kg_materia_prima_8.to_f.round(2) %> </td>
-      <td> <%= @formula_pintura.costo_kg_materia_prima_8.to_f.round(2) %></td>
-       <td> <%= @formula_pintura.costo_kg_materia_prima_8.to_f.round(2) * $dolar %></td>
+    <td> <%= number_to_currency(@formula_pintura.costo_kg_materia_prima_8.to_f.round(2) * $dolar, options= {:precision => 0 ,  :delimiter => '.',:delimiter => '.' } ) %></td>
     <td> <%= @formula_pintura.costo_total_materia_prima_8.to_f.round(2) %> </td>
-    <td> <%=  number_to_currency( @formula_pintura.costo_total_materia_prima_8.to_f.round(2) * $dolar ) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_total_materia_prima_8.to_f.round(2) * $dolar , options= {:precision => 0 ,  :delimiter => '.' } ) %> </td>
   </tr>
     <tr>
-    <td> 9 </td>
+   <td> 9 </td>
     <td> <%= @formula_pintura.materia_prima_9 %> </td>
+    <td> <%= @formula_pintura.costo_kg_materia_prima_9.to_f.round(2) %></td>
     <td> <%= @formula_pintura.porcentaje_materia_prima_9 %></td>
     <td> <%= @formula_pintura.kg_materia_prima_9.to_f.round(2) %> </td>
-      <td> <%= @formula_pintura.costo_kg_materia_prima_9.to_f.round(2) %></td>
-       <td> <%= @formula_pintura.costo_kg_materia_prima_9.to_f.round(2) * $dolar %></td>
-     <td> <%= @formula_pintura.costo_total_materia_prima_9.to_f.round(2) %> </td>
-     <td> <%=  number_to_currency( @formula_pintura.costo_total_materia_prima_9.to_f.round(2) * $dolar ) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_kg_materia_prima_9.to_f.round(2) * $dolar, options= {:precision => 0 ,  :delimiter => '.',:delimiter => '.' } ) %></td>
+    <td> <%= @formula_pintura.costo_total_materia_prima_9.to_f.round(2) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_total_materia_prima_9.to_f.round(2) * $dolar , options= {:precision => 0 ,  :delimiter => '.' } ) %> </td>
   </tr>
-    <tr>
-    <td> 10 </td>
+ <td> 10 </td>
     <td> <%= @formula_pintura.materia_prima_10 %> </td>
+    <td> <%= @formula_pintura.costo_kg_materia_prima_10.to_f.round(2) %></td>
     <td> <%= @formula_pintura.porcentaje_materia_prima_10 %></td>
     <td> <%= @formula_pintura.kg_materia_prima_10.to_f.round(2) %> </td>
-     <td> <%= @formula_pintura.costo_kg_materia_prima_10.to_f.round(2) * $dolar %></td>
-      <td> <%= @formula_pintura.costo_kg_materia_prima_10.to_f.round(2) %></td>
-     <td> <%= @formula_pintura.costo_total_materia_prima_10.to_f.round(2) %> </td>
-     <td> <%=  number_to_currency( @formula_pintura.costo_total_materia_prima_10.to_f.round(2) * $dolar ) %> </td>
-  </tr>
+    <td> <%= number_to_currency(@formula_pintura.costo_kg_materia_prima_10.to_f.round(2) * $dolar, options= {:precision => 0 ,  :delimiter => '.',:delimiter => '.' } ) %></td>
+    <td> <%= @formula_pintura.costo_total_materia_prima_10.to_f.round(2) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_total_materia_prima_10.to_f.round(2) * $dolar , options= {:precision => 0 ,  :delimiter => '.' } ) %> </td>
     <tr>
     <td> 11 </td>
     <td> <%= @formula_pintura.materia_prima_11 %> </td>
+    <td> <%= @formula_pintura.costo_kg_materia_prima_11.to_f.round(2) %></td>
     <td> <%= @formula_pintura.porcentaje_materia_prima_11 %></td>
     <td> <%= @formula_pintura.kg_materia_prima_11.to_f.round(2) %> </td>
-      <td> <%= @formula_pintura.costo_kg_materia_prima_11.to_f.round(2) %></td>
-       <td> <%= @formula_pintura.costo_kg_materia_prima_11.to_f.round(2) * $dolar %></td>
-     <td> <%= @formula_pintura.costo_total_materia_prima_11.to_f.round(2) %> </td>
-     <td> <%=  number_to_currency( @formula_pintura.costo_total_materia_prima_11.to_f.round(2) * $dolar ) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_kg_materia_prima_11.to_f.round(2) * $dolar, options= {:precision => 0 ,  :delimiter => '.',:delimiter => '.' } ) %></td>
+    <td> <%= @formula_pintura.costo_total_materia_prima_11.to_f.round(2) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_total_materia_prima_11.to_f.round(2) * $dolar , options= {:precision => 0 ,  :delimiter => '.' } ) %> </td>
   </tr>
     <tr>
     <td> 12 </td>
     <td> <%= @formula_pintura.materia_prima_12 %> </td>
+    <td> <%= @formula_pintura.costo_kg_materia_prima_12.to_f.round(2) %></td>
     <td> <%= @formula_pintura.porcentaje_materia_prima_12 %></td>
     <td> <%= @formula_pintura.kg_materia_prima_12.to_f.round(2) %> </td>
-      <td> <%= @formula_pintura.costo_kg_materia_prima_12.to_f.round(2) %></td>
-       <td> <%= @formula_pintura.costo_kg_materia_prima_12.to_f.round(2) * $dolar %></td>
-     <td> <%= @formula_pintura.costo_total_materia_prima_12.to_f.round(2) %> </td>
-     <td> <%=   number_to_currency( @formula_pintura.costo_total_materia_prima_12.to_f.round(2) * $dolar ) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_kg_materia_prima_12.to_f.round(2) * $dolar, options= {:precision => 0 ,  :delimiter => '.',:delimiter => '.' } ) %></td>
+    <td> <%= @formula_pintura.costo_total_materia_prima_12.to_f.round(2) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_total_materia_prima_12.to_f.round(2) * $dolar , options= {:precision => 0 ,  :delimiter => '.' } ) %> </td>
   </tr>
     <tr>
-    <td> 13 </td>
+   <td> 13 </td>
     <td> <%= @formula_pintura.materia_prima_13 %> </td>
+    <td> <%= @formula_pintura.costo_kg_materia_prima_13.to_f.round(2) %></td>
     <td> <%= @formula_pintura.porcentaje_materia_prima_13 %></td>
     <td> <%= @formula_pintura.kg_materia_prima_13.to_f.round(2) %> </td>
-      <td> <%= @formula_pintura.costo_kg_materia_prima_13.to_f.round(2) %></td>
-       <td> <%= @formula_pintura.costo_kg_materia_prima_13.to_f.round(2) * $dolar %></td>
-     <td> <%= @formula_pintura.costo_total_materia_prima_13.to_f.round(2) %> </td>
-     <td> <%=  number_to_currency(@formula_pintura.costo_total_materia_prima_13.to_f.round(2) * $dolar ) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_kg_materia_prima_13.to_f.round(2) * $dolar, options= {:precision => 0 ,  :delimiter => '.',:delimiter => '.' } ) %></td>
+    <td> <%= @formula_pintura.costo_total_materia_prima_13.to_f.round(2) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_total_materia_prima_13.to_f.round(2) * $dolar , options= {:precision => 0 ,  :delimiter => '.' } ) %> </td>
   </tr>
     <tr>
     <td> 14 </td>
     <td> <%= @formula_pintura.materia_prima_14 %> </td>
+    <td> <%= @formula_pintura.costo_kg_materia_prima_14.to_f.round(2) %></td>
     <td> <%= @formula_pintura.porcentaje_materia_prima_14 %></td>
     <td> <%= @formula_pintura.kg_materia_prima_14.to_f.round(2) %> </td>
-      <td> <%= @formula_pintura.costo_kg_materia_prima_14.to_f.round(2) %></td>
-       <td> <%= @formula_pintura.costo_kg_materia_prima_14.to_f.round(2) * $dolar %></td>
-     <td> <%= @formula_pintura.costo_total_materia_prima_14.to_f.round(2) %> </td>
-     <td> <%=  number_to_currency(@formula_pintura.costo_total_materia_prima_14.to_f.round(2) * $dolar ) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_kg_materia_prima_14.to_f.round(2) * $dolar, options= {:precision => 0 ,  :delimiter => '.',:delimiter => '.' } ) %></td>
+    <td> <%= @formula_pintura.costo_total_materia_prima_14.to_f.round(2) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_total_materia_prima_14.to_f.round(2) * $dolar , options= {:precision => 0 ,  :delimiter => '.' } ) %> </td>
   </tr>
     <tr>
     <td> 15 </td>
     <td> <%= @formula_pintura.materia_prima_15 %> </td>
+    <td> <%= @formula_pintura.costo_kg_materia_prima_15.to_f.round(2) %></td>
     <td> <%= @formula_pintura.porcentaje_materia_prima_15 %></td>
     <td> <%= @formula_pintura.kg_materia_prima_15.to_f.round(2) %> </td>
-      <td> <%= @formula_pintura.costo_kg_materia_prima_15.to_f.round(2) %></td>
-       <td> <%= @formula_pintura.costo_kg_materia_prima_15.to_f.round(2) * $dolar %></td>
-     <td> <%= @formula_pintura.costo_total_materia_prima_15.to_f.round(2) %> </td>
-     <td> <%=  number_to_currency(@formula_pintura.costo_total_materia_prima_15.to_f.round(2) * $dolar) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_kg_materia_prima_15.to_f.round(2) * $dolar, options= {:precision => 0 ,  :delimiter => '.',:delimiter => '.' } ) %></td>
+    <td> <%= @formula_pintura.costo_total_materia_prima_15.to_f.round(2) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_total_materia_prima_15.to_f.round(2) * $dolar , options= {:precision => 0 ,  :delimiter => '.' } ) %> </td>
   </tr>
     <tr>
     <td> 16 </td>
     <td> <%= @formula_pintura.materia_prima_16 %> </td>
+    <td> <%= @formula_pintura.costo_kg_materia_prima_16.to_f.round(2) %></td>
     <td> <%= @formula_pintura.porcentaje_materia_prima_16 %></td>
     <td> <%= @formula_pintura.kg_materia_prima_16.to_f.round(2) %> </td>
-      <td> <%= @formula_pintura.costo_kg_materia_prima_16.to_f.round(2) %></td>
-       <td> <%= @formula_pintura.costo_kg_materia_prima_16.to_f.round(2) * $dolar %></td>
-     <td> <%= @formula_pintura.costo_total_materia_prima_16.to_f.round(2) %> </td>
-     <td> <%=  number_to_currency(@formula_pintura.costo_total_materia_prima_16.to_f.round(2) * $dolar) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_kg_materia_prima_16.to_f.round(2) * $dolar, options= {:precision => 0 ,  :delimiter => '.',:delimiter => '.' } ) %></td>
+    <td> <%= @formula_pintura.costo_total_materia_prima_16.to_f.round(2) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_total_materia_prima_16.to_f.round(2) * $dolar , options= {:precision => 0 ,  :delimiter => '.' } ) %> </td>
   </tr>
     <tr>
     <td> 17 </td>
     <td> <%= @formula_pintura.materia_prima_17 %> </td>
+    <td> <%= @formula_pintura.costo_kg_materia_prima_17.to_f.round(2) %></td>
     <td> <%= @formula_pintura.porcentaje_materia_prima_17 %></td>
     <td> <%= @formula_pintura.kg_materia_prima_17.to_f.round(2) %> </td>
-     <td> <%= @formula_pintura.costo_kg_materia_prima_17.to_f.round(2) * $dolar %></td>
-      <td> <%= @formula_pintura.costo_kg_materia_prima_17.to_f.round(2) %></td>
-     <td> <%= @formula_pintura.costo_total_materia_prima_17.to_f.round(2) %> </td>
-     <td> <%=  number_to_currency(@formula_pintura.costo_total_materia_prima_17.to_f.round(2) * $dolar ) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_kg_materia_prima_17.to_f.round(2) * $dolar, options= {:precision => 0 ,  :delimiter => '.',:delimiter => '.' } ) %></td>
+    <td> <%= @formula_pintura.costo_total_materia_prima_17.to_f.round(2) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_total_materia_prima_17.to_f.round(2) * $dolar , options= {:precision => 0 ,  :delimiter => '.' } ) %> </td>
   </tr>
     <tr>
-    <td> 18 </td>
+   <td> 18 </td>
     <td> <%= @formula_pintura.materia_prima_18 %> </td>
+    <td> <%= @formula_pintura.costo_kg_materia_prima_18.to_f.round(2) %></td>
     <td> <%= @formula_pintura.porcentaje_materia_prima_18 %></td>
     <td> <%= @formula_pintura.kg_materia_prima_18.to_f.round(2) %> </td>
-      <td> <%= @formula_pintura.costo_kg_materia_prima_18.to_f.round(2) %></td>
-       <td> <%= @formula_pintura.costo_kg_materia_prima_18.to_f.round(2) * $dolar %></td>
-     <td> <%= @formula_pintura.costo_total_materia_prima_18.to_f.round(2) %> </td>
-     <td> <%=  number_to_currency( @formula_pintura.costo_total_materia_prima_18.to_f.round(2) * $dolar )%> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_kg_materia_prima_18.to_f.round(2) * $dolar, options= {:precision => 0 ,  :delimiter => '.',:delimiter => '.' } ) %></td>
+    <td> <%= @formula_pintura.costo_total_materia_prima_18.to_f.round(2) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_total_materia_prima_18.to_f.round(2) * $dolar , options= {:precision => 0 ,  :delimiter => '.' } ) %> </td>
   </tr>
     <tr>
-    <td> 19 </td>
+   <td> 19 </td>
     <td> <%= @formula_pintura.materia_prima_19 %> </td>
+    <td> <%= @formula_pintura.costo_kg_materia_prima_19.to_f.round(2) %></td>
     <td> <%= @formula_pintura.porcentaje_materia_prima_19 %></td>
     <td> <%= @formula_pintura.kg_materia_prima_19.to_f.round(2) %> </td>
-      <td> <%= @formula_pintura.costo_kg_materia_prima_19.to_f.round(2) %></td>
-       <td> <%= @formula_pintura.costo_kg_materia_prima_19.to_f.round(2) * $dolar %></td>
-     <td> <%= @formula_pintura.costo_total_materia_prima_19.to_f.round(2) %> </td>
-     <td> <%= number_to_currency( @formula_pintura.costo_total_materia_prima_19.to_f.round(2) * $dolar ) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_kg_materia_prima_19.to_f.round(2) * $dolar, options= {:precision => 0 ,  :delimiter => '.',:delimiter => '.' } ) %></td>
+    <td> <%= @formula_pintura.costo_total_materia_prima_19.to_f.round(2) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_total_materia_prima_19.to_f.round(2) * $dolar , options= {:precision => 0 ,  :delimiter => '.' } ) %> </td>
   </tr>
     <tr>
     <td> 20 </td>
     <td> <%= @formula_pintura.materia_prima_20 %> </td>
+    <td> <%= @formula_pintura.costo_kg_materia_prima_20.to_f.round(2) %></td>
     <td> <%= @formula_pintura.porcentaje_materia_prima_20 %></td>
     <td> <%= @formula_pintura.kg_materia_prima_20.to_f.round(2) %> </td>
-      <td> <%= @formula_pintura.costo_kg_materia_prima_20.to_f.round(2) %></td>
-       <td> <%= @formula_pintura.costo_kg_materia_prima_20.to_f.round(2) * $dolar %></td>
-     <td> <%= @formula_pintura.costo_total_materia_prima_20.to_f.round(2) %> </td>
-     <td> <%=  number_to_currency(@formula_pintura.costo_total_materia_prima_20.to_f.round(2) * $dolar) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_kg_materia_prima_20.to_f.round(2) * $dolar, options= {:precision => 0 ,  :delimiter => '.',:delimiter => '.' } ) %></td>
+    <td> <%= @formula_pintura.costo_total_materia_prima_20.to_f.round(2) %> </td>
+    <td> <%= number_to_currency(@formula_pintura.costo_total_materia_prima_20.to_f.round(2) * $dolar , options= {:precision => 0 ,  :delimiter => '.' } ) %> </td>
   </tr>
-
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><%= porcentaje_total_formula_calc(@formula_pintura) %>  </td>
+    <td><%= kilos_total_formula_calc(@formula_pintura) %></td>
+    <td></td>
+    <td style="background: #4b87c7;color:white">Costo final kg</td>
+    <td><%=  number_to_currency((calculo_total(@formula_pintura).to_i / kilos_total_formula_calc(@formula_pintura).to_i  ), options= {:precision => 0 ,  :delimiter => '.',:delimiter => '.' } ) %></td>
+  </tr>
 </table>
 
 

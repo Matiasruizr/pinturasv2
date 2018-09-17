@@ -24,7 +24,7 @@
         <td><%= materias_prima.marca %></td>
         <td><%= materias_prima.cantidad %></td>
         <td><%= materias_prima.precio %></td>
-        <td><%= materias_prima.precio * $dolar %></td>
+        <td><%=  number_to_currency(materias_prima.precio * $dolar, options= {:precision => 0 ,  :delimiter => '.' }) %></td>
         <td><%= link_to 'Show', materias_prima %></td>
         <td><%= link_to 'Edit', edit_materias_prima_path(materias_prima) %></td>
         <td><%= link_to 'Destroy', materias_prima, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -256,7 +256,12 @@ h5{
     <td> <%= @formula.porcentaje_materia_prima_20 %></td>
     <td> <%= @formula.kg_materia_prima_20.to_f.round(2) %> </td>
   </tr>
-
+  <tr>
+  <td style="background: #4b87c7;color:white;">Totales</td>
+  <td></td>
+  <td><%= porcentaje_total_formula_calc(@formula) %></td>
+    <td><%= kilos_total_formula_calc(@formula) %></td>
+  </tr>
 </table>
 
 

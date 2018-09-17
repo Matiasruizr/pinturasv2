@@ -1,6 +1,7 @@
 class MateriasPrimasController < ApplicationController
   before_action :set_materias_prima, only: [:show, :edit, :update, :destroy]
 
+
   # GET /materias_primas
   # GET /materias_primas.json
   def index
@@ -20,6 +21,8 @@ class MateriasPrimasController < ApplicationController
   # GET /materias_primas/1/edit
   def edit
   end
+
+
 
   # POST /materias_primas
   # POST /materias_primas.json
@@ -62,16 +65,63 @@ class MateriasPrimasController < ApplicationController
   end
 
   def agregar
-    @materia =  MateriasPrima.where( nombre: params[:nombre] ).first
-    @nueva_cantidad = @materia.cantidad.to_f + params[:cantidad].to_f
-    @materia.update(cantidad: @nueva_cantidad)
+      if $veces == nil
+        $veces = 0
+      else
+        $veces =  params[:veces].to_i
+      end
+      @materia =  MateriasPrima.where( nombre: params[:nombre1] ).first
+      @nueva_cantidad = @materia.cantidad.to_f + params[:cantidad1].to_f
+      @materia.update(cantidad: @nueva_cantidad) 
+
+      @materia2 =  MateriasPrima.where( nombre: params[:nombre2] ).first
+      @nueva_cantidad2 = @materia2.cantidad.to_f + params[:cantidad2].to_f
+      @materia2.update(cantidad: @nueva_cantidad2) 
+
+      @materia3 =  MateriasPrima.where( nombre: params[:nombre3] ).first
+      @nueva_cantidad3 = @materia3.cantidad.to_f + params[:cantidad3].to_f
+      @materia3.update(cantidad: @nueva_cantidad3)  
+    
+      @materia4 =  MateriasPrima.where( nombre: params[:nombre4] ).first
+      @nueva_cantidad4 = @materia4.cantidad.to_f + params[:cantidad4].to_f
+      @materia4.update(cantidad: @nueva_cantidad4)
+
+      @materia5 =  MateriasPrima.where( nombre: params[:nombre5] ).first
+      @nueva_cantidad5 = @materia5.cantidad.to_f + params[:cantidad5].to_f
+      @materia5.update(cantidad: @nueva_cantidad5)
+
+      @materia6 =  MateriasPrima.where( nombre: params[:nombre6] ).first
+      @nueva_cantidad6 = @materia6.cantidad.to_f + params[:cantidad6].to_f
+      @materia6.update(cantidad: @nueva_cantidad6)
+
+      @materia7 =  MateriasPrima.where( nombre: params[:nombre7] ).first
+      @nueva_cantidad7 = @materia7.cantidad.to_f + params[:cantidad7].to_f
+      @materia7.update(cantidad: @nueva_cantidad7)
+
+      @materia8 =  MateriasPrima.where( nombre: params[:nombre8] ).first
+      @nueva_cantidad8 = @materia8.cantidad.to_f + params[:cantidad8].to_f
+      @materia8.update(cantidad: @nueva_cantidad8)
+
+      @materia9 =  MateriasPrima.where( nombre: params[:nombre9] ).first
+      @nueva_cantidad9 = @materia9.cantidad.to_f + params[:cantidad9].to_f
+      @materia9.update(cantidad: @nueva_cantidad9)
+
+      @materia10 =  MateriasPrima.where( nombre: params[:nombre10] ).first
+      @nueva_cantidad10 = @materia10.cantidad.to_f + params[:cantidad10].to_f
+      @materia10.update(cantidad: @nueva_cantidad10)
+
+
    # Falta el mensaje de exito
     respond_to do |format|
-      format.html { redirect_to @materia, notice: "Se agrego #{params[:cantidad]} de cantidad a la materia  #{params[:nombre]}" }
+
+      format.html { redirect_to @materia, notice: "Se agregaron todas las materias primas ingresadas correctamente"}
       format.json { render :show, status: :created, location: @materia }
+      format.js {render inline: "location.reload();" }
     end
 
   end
+
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.

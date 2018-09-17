@@ -26,6 +26,9 @@ class FormulaPinturasController < ApplicationController
   def edit
   end
 
+  
+
+
   def costo_total_materia_prima!
     @formula_pintura.costo_total_materia_prima_1 =  @formula_pintura.costo_kg_materia_prima_1.to_f *  @formula_pintura.kg_materia_prima_1.to_f
     if @formula_pintura.costo_kg_materia_prima_2.present?

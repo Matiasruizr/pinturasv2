@@ -16,3 +16,18 @@
 //= require_tree .
 //= require jquery
 //= require bootstrap-sprockets
+
+
+$(document).ready(function(){
+    $("#vecesA").click(function(){
+        location.reload();
+    
+    });
+    var veces = $("#probando").text();
+
+    var i;
+ 
+    for (i = 10; i > veces; i--) {
+        $("#"+i).hide();
+    }
+});

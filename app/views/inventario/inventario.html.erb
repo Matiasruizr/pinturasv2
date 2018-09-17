@@ -36,8 +36,8 @@
         
   <div class="precio">
    <h3> Dolar actual: <%= $dolar %> </h3>
-   <h3> Total US: <%= number_to_currency($totalInventario) %>  </h3>
-   <h3> Total CLP: <%= number_to_currency( ($totalInventario * $dolar)) %> </h3>
+   <h3> Total US: <%= number_to_currency($totalInventario, options= {:precision => 0 }) %>  </h3>
+   <h3> Total CLP: <%= number_to_currency( ($totalInventario * $dolar), options= {:precision => 0 ,  :delimiter => '.' }) %> </h3>
   </div>
 
   <div class="descargar"><%= link_to 'Descargar pdf', inventario_inventario_path(format: :pdf) %></div>
