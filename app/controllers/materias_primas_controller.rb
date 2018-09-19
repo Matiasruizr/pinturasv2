@@ -66,7 +66,7 @@ class MateriasPrimasController < ApplicationController
 
   def agregar
       if $veces == nil
-        $veces = 0
+        $veces = 1
       else
         $veces =  params[:veces].to_i
       end
