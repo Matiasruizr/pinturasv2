@@ -54,7 +54,7 @@
     <div class="materia_formula_edit">
     <div class="field">
       <%= form.label :materia_prima_2 %>
-      <%= form.select(:materia_prima_2, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } .push(["No Aplica",nil]), :selected => "No aplica" ) %>
+      <%= form.select(:materia_prima_2, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } .push(["No Aplica",nil]) ) %>
     </div>
 
     <div class="field">
@@ -90,7 +90,7 @@
     <div class="materia_formula_edit">
     <div class="field">
       <%= form.label :materia_prima_4 %>
-      <%= form.select(:materia_prima_4, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } .push(["No Aplica",nil]), 'no aplica' ) %>
+      <%= form.select(:materia_prima_4, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } .push(["No Aplica",nil]) ) %>
     </div>
 
     <div class="field">
