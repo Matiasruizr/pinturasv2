@@ -54,7 +54,7 @@
     <div class="materia_formula_edit">
     <div class="field">
       <%= form.label :materia_prima_2 %>
-      <%= form.select(:materia_prima_2, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } .push(["No Aplica",nil]) ) %>
+      <%= form.select(:materia_prima_2, MateriasPrima.all.collect {|m| [ m.nombre, m.nombre ] } .push(["No Aplica",nil]), :selected => "No aplica" ) %>
     </div>
 
     <div class="field">
@@ -383,7 +383,7 @@
     </div>
 
     <div class="field">
-      <%= form.label :costo_kg_materia_prima_20, 'Costo en kg de materia prima 20(USD)' %>
+      <%= form.label :costo_kg_materia_prima_20, 'Costo en kg de materia prima 20 (USD)' %>
       <%= form.text_field :costo_kg_materia_prima_20 %>
     </div>
 
