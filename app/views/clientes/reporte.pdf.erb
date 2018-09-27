@@ -58,6 +58,21 @@ h5{
 
 <h5> Fecha de emisión de reporte: <%= Time.now %></h5>
 <table class="ot" cellspacing="0">
+ <thead>
+    <tr>
+        <tr>
+      <th>Cliente</th>
+      <th>Rut</th>
+      <th>Razon social</th>
+      <th>Giro</th>
+      <th>Direccion</th>
+      <th>Email</th>
+      <th>Telefono</th>
+      <th>Contacto</th>
+      <th>Fecha ingreso</th>
+    </tr>
+    </tr>
+  </thead>
    <% @clientes.each do |cliente| %>
       <tr>
         <td><%= cliente.cliente_id %></td>
