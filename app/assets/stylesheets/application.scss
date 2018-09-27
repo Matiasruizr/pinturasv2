@@ -219,7 +219,7 @@ nav{
 
  .materia_formula_edit{
      .field{
-         width: 33%;
+         width: 50%;
          float: left;
          label{
              text-overflow: ellipsis;
@@ -277,6 +277,7 @@ nav{
     margin: 40px auto;
     width: 220px;
     background: #263238;
+    cursor: pointer;
     color: white;
     a{
         color: white;

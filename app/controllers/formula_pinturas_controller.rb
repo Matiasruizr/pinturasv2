@@ -26,8 +26,9 @@ class FormulaPinturasController < ApplicationController
   def edit
   end
 
-  
-
+  def costo_cada_materia_prima!
+     @formula_pintura.costo_kg_materia_prima_1.to_f = MateriasPrima.where(nombre: @formula_pintura.materia_prima_1.to_s).precio.to_f
+  end
 
   def costo_total_materia_prima!
     @formula_pintura.costo_total_materia_prima_1 =  @formula_pintura.costo_kg_materia_prima_1.to_f *  @formula_pintura.kg_materia_prima_1.to_f
@@ -160,7 +161,7 @@ class FormulaPinturasController < ApplicationController
   def create
     @formula_pintura = FormulaPintura.new(formula_pintura_params)
 
-    
+    costo_cada_materia_prima!
     calculo_kg_formula!
     costo_total_materia_prima!
 
