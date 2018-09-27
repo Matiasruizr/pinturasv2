@@ -27,18 +27,18 @@ class FormulaPinturasController < ApplicationController
   end
 
   def costo_cada_materia_prima!
-     @formula_pintura.costo_kg_materia_prima_1.to_f = MateriasPrima.where(nombre: @formula_pintura.materia_prima_1.to_s).precio.to_f
+     @formula_pintura.costo_kg_materia_prima_1.to_f = MateriasPrima.where(nombre: @formula_pintura.materia_prima_1.to_s).first.precio.to_f
      if @formula_pintura.materia_prima_2.present?
-      @formula_pintura.costo_kg_materia_prima_2.to_f = MateriasPrima.where(nombre: @formula_pintura.materia_prima_2.to_s).precio.to_f
+      @formula_pintura.costo_kg_materia_prima_2.to_f = MateriasPrima.where(nombre: @formula_pintura.materia_prima_2.to_s).first.precio.to_f
     end
     if @formula_pintura.materia_prima_3.present?
-      @formula_pintura.costo_kg_materia_prima_3.to_f = MateriasPrima.where(nombre: @formula_pintura.materia_prima_3.to_s).precio.to_f
+      @formula_pintura.costo_kg_materia_prima_3.to_f = MateriasPrima.where(nombre: @formula_pintura.materia_prima_3.to_s).first.precio.to_f
     end
     if @formula_pintura.materia_prima_4.present?
-      @formula_pintura.costo_kg_materia_prima_4.to_f = MateriasPrima.where(nombre: @formula_pintura.materia_prima_4.to_s).precio.to_f
+      @formula_pintura.costo_kg_materia_prima_4.to_f = MateriasPrima.where(nombre: @formula_pintura.materia_prima_4.to_s).first.precio.to_f
     end
     if @formula_pintura.materia_prima_5.present?
-      @formula_pintura.costo_kg_materia_prima_5.to_f = MateriasPrima.where(nombre: @formula_pintura.materia_prima_5.to_s).precio.to_f
+      @formula_pintura.costo_kg_materia_prima_5.to_f = MateriasPrima.where(nombre: @formula_pintura.materia_prima_5.to_s).first.precio.to_f
     end
   end
 
