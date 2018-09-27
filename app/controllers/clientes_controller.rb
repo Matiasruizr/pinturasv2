@@ -10,6 +10,11 @@ class ClientesController < ApplicationController
   # GET /clientes/1
   # GET /clientes/1.json
   def show
+    respond_to do |format|
+      format.html  
+      format.json
+      format.pdf {render template: 'clientes/reporte', pdf: 'reporte'}
+    end
   end
 
   # GET /clientes/new

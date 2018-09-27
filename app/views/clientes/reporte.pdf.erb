@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+  <meta charset="utf-8">
+</head>
+<body>
+
+<style>
+  table {
+    width: 100%;
+    padding: 10px 0;
+    font-family:'Arial';
+    text-transform: uppercase;
+    font-size:15px;
+
+  }
+  h1{
+     font-family:'Arial';
+    width:100%;
+       clear:both;
+    font-size:19px;
+   border: 1px solid black;
+    padding:5px;
+    background: #536ae0;
+     text-align:center;
+    color: white;
+    margin-bottom:0px;
+  }
+  table th{
+    border: 1px solid black;
+    padding:5px;
+    background: #536ae0;
+     text-align:center;
+    color: white;
+    margin:0!important;
+  }
+   table td{
+   margin: 0;
+     margin:0!important;
+
+   padding: 3px;
+    border: 1px solid black;
+    text-align:center;
+  }
+img{
+  float:left;
+}
+h5{
+  float:right;
+      font-family:'Arial';
+      clear:both;
+}
+</style>
+
+<% @formula_pintura.formula_kg = 100 %>
+<% calculo_total(@formula_pintura) %>
+<% calculo_kg_formula(@formula_pintura) %>
+<% calculo_costo(@formula_pintura) %>
+        <%= wicked_pdf_image_tag 'logoandescolor.png' %>
+       
+        <h5> Fecha de emisión de reporte: <%= Time.now %></h5>
+<table class="ot" cellspacing="0">
+   <% @clientes.each do |cliente| %>
+      <tr>
+        <td><%= cliente.cliente_id %></td>
+        <td><%= cliente.rut %></td>
+        <td><%= cliente.razon_social %></td>
+        <td><%= cliente.giro %></td>
+        <td><%= cliente.direccion %></td>
+        <td><%= cliente.email %></td>
+        <td><%= cliente.telefono %></td>
+        <td><%= cliente.contacto %></td>
+        <td><%= cliente.fecha_ingreso %></td>
+        <td><%= link_to 'Show', cliente %></td>
+        <td><%= link_to 'Edit', edit_cliente_path(cliente) %></td>
+        <td><%= link_to 'Destroy', cliente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+
+</table>
+
+<table class="formula_pintura" cellspacing="0">
+
+ 
+</table>
+
+
+
+</body>
+</html>

@@ -30,4 +30,12 @@ $(document).ready(function(){
     for (i = 10; i > veces; i--) {
         $("#"+i).hide();
     }
+
+
+
+
+
+    // Validacion de formularios
+    
+    
 });
