@@ -30,7 +30,10 @@ class FormulaPinturasController < ApplicationController
     @auxMateria1 = MateriasPrima.where(nombre: @formula_pintura.materia_prima_1).first
     @formula_pintura.costo_kg_materia_prima_1 =  @auxMateria1.precio.to_f
 
-
+    if @formula_pintura.materia_prima_2.empty? == false
+      @auxMateria2 = MateriasPrima.where(nombre: @formula_pintura.materia_prima_2).first
+      @formula_pintura.costo_kg_materia_prima_2 =  @auxMateria2.precio.to_f
+    end
   end
 
   def costo_total_materia_prima!
