@@ -34,6 +34,102 @@ class FormulaPinturasController < ApplicationController
       @auxMateria2 = MateriasPrima.where(nombre: @formula_pintura.materia_prima_2).first
       @formula_pintura.costo_kg_materia_prima_2 =  @auxMateria2.precio.to_f
     end
+
+    if @formula_pintura.materia_prima_3.empty? == false
+      @auxMateria3 = MateriasPrima.where(nombre: @formula_pintura.materia_prima_3).first
+      @formula_pintura.costo_kg_materia_prima_3 =  @auxMateria3.precio.to_f
+    end
+
+    if @formula_pintura.materia_prima_4.empty? == false
+      @auxMateria4 = MateriasPrima.where(nombre: @formula_pintura.materia_prima_4).first
+      @formula_pintura.costo_kg_materia_prima_4 =  @auxMateria4.precio.to_f
+    end
+
+    if @formula_pintura.materia_prima_5.empty? == false
+      @auxMateria5 = MateriasPrima.where(nombre: @formula_pintura.materia_prima_5).first
+      @formula_pintura.costo_kg_materia_prima_5 =  @auxMateria5.precio.to_f
+    end
+
+    if @formula_pintura.materia_prima_6.empty? == false
+      @auxMateria6 = MateriasPrima.where(nombre: @formula_pintura.materia_prima_6).first
+      @formula_pintura.costo_kg_materia_prima_6 =  @auxMateria6.precio.to_f
+    end
+
+    if @formula_pintura.materia_prima_7.empty? == false
+      @auxMateria7 = MateriasPrima.where(nombre: @formula_pintura.materia_prima_7).first
+      @formula_pintura.costo_kg_materia_prima_7 =  @auxMateria7.precio.to_f
+    end
+
+    if @formula_pintura.materia_prima_8.empty? == false
+      @auxMateria8 = MateriasPrima.where(nombre: @formula_pintura.materia_prima_8).first
+      @formula_pintura.costo_kg_materia_prima_8 =  @auxMateria8.precio.to_f
+    end
+
+    if @formula_pintura.materia_prima_9.empty? == false
+      @auxMateria9 = MateriasPrima.where(nombre: @formula_pintura.materia_prima_9).first
+      @formula_pintura.costo_kg_materia_prima_9 =  @auxMateria9.precio.to_f
+    end
+
+    if @formula_pintura.materia_prima_10.empty? == false
+      @auxMateria10 = MateriasPrima.where(nombre: @formula_pintura.materia_prima_10).first
+      @formula_pintura.costo_kg_materia_prima_10 =  @auxMateria10.precio.to_f
+    end
+
+    if @formula_pintura.materia_prima_11.empty? == false
+      @auxMateria11 = MateriasPrima.where(nombre: @formula_pintura.materia_prima_11).first
+      @formula_pintura.costo_kg_materia_prima_11 =  @auxMateria11.precio.to_f
+    end
+
+    if @formula_pintura.materia_prima_12.empty? == false
+      @auxMateria12 = MateriasPrima.where(nombre: @formula_pintura.materia_prima_12).first
+      @formula_pintura.costo_kg_materia_prima_12 =  @auxMateria12.precio.to_f
+    end
+
+    if @formula_pintura.materia_prima_13.empty? == false
+      @auxMateria13 = MateriasPrima.where(nombre: @formula_pintura.materia_prima_13).first
+      @formula_pintura.costo_kg_materia_prima_13 =  @auxMateria13.precio.to_f
+    end
+
+    if @formula_pintura.materia_prima_14.empty? == false
+      @auxMateria14 = MateriasPrima.where(nombre: @formula_pintura.materia_prima_14).first
+      @formula_pintura.costo_kg_materia_prima_14 =  @auxMateria14.precio.to_f
+    end
+
+    if @formula_pintura.materia_prima_15.empty? == false
+      @auxMateria15 = MateriasPrima.where(nombre: @formula_pintura.materia_prima_15).first
+      @formula_pintura.costo_kg_materia_prima_15 =  @auxMateria15.precio.to_f
+    end
+
+    if @formula_pintura.materia_prima_16.empty? == false
+      @auxMateria16 = MateriasPrima.where(nombre: @formula_pintura.materia_prima_16).first
+      @formula_pintura.costo_kg_materia_prima_16 =  @auxMateria16.precio.to_f
+    end
+
+    if @formula_pintura.materia_prima_17.empty? == false
+      @auxMateria17 = MateriasPrima.where(nombre: @formula_pintura.materia_prima_17).first
+      @formula_pintura.costo_kg_materia_prima_17 =  @auxMateria17.precio.to_f
+    end
+
+    if @formula_pintura.materia_prima_18.empty? == false
+      @auxMateria18 = MateriasPrima.where(nombre: @formula_pintura.materia_prima_18).first
+      @formula_pintura.costo_kg_materia_prima_18 =  @auxMateria18.precio.to_f
+    end
+
+    if @formula_pintura.materia_prima_19.empty? == false
+      @auxMateria19 = MateriasPrima.where(nombre: @formula_pintura.materia_prima_19).first
+      @formula_pintura.costo_kg_materia_prima_19 =  @auxMateria19.precio.to_f
+    end
+
+    if @formula_pintura.materia_prima_20.empty? == false
+      @auxMateria20 = MateriasPrima.where(nombre: @formula_pintura.materia_prima_20).first
+      @formula_pintura.costo_kg_materia_prima_20 =  @auxMateria20.precio.to_f
+    end
+
+    
+
+
+
+
   end
 
   def costo_total_materia_prima!
