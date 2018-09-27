@@ -53,13 +53,10 @@ h5{
 }
 </style>
 
-<% @formula_pintura.formula_kg = 100 %>
-<% calculo_total(@formula_pintura) %>
-<% calculo_kg_formula(@formula_pintura) %>
-<% calculo_costo(@formula_pintura) %>
-        <%= wicked_pdf_image_tag 'logoandescolor.png' %>
-       
-        <h5> Fecha de emisión de reporte: <%= Time.now %></h5>
+
+<%= wicked_pdf_image_tag 'logoandescolor.png' %>
+
+<h5> Fecha de emisión de reporte: <%= Time.now %></h5>
 <table class="ot" cellspacing="0">
    <% @clientes.each do |cliente| %>
       <tr>
@@ -72,19 +69,10 @@ h5{
         <td><%= cliente.telefono %></td>
         <td><%= cliente.contacto %></td>
         <td><%= cliente.fecha_ingreso %></td>
-        <td><%= link_to 'Show', cliente %></td>
-        <td><%= link_to 'Edit', edit_cliente_path(cliente) %></td>
-        <td><%= link_to 'Destroy', cliente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
 
 </table>
-
-<table class="formula_pintura" cellspacing="0">
-
- 
-</table>
-
 
 
 </body>

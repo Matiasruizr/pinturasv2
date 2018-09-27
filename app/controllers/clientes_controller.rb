@@ -5,6 +5,10 @@ class ClientesController < ApplicationController
   # GET /clientes.json
   def index
     @clientes = Cliente.all
+    respond_to do |format|
+      format.html  
+      format.pdf {render template: 'clientes/reporte', pdf: 'reporte'}
+    end
   end
 
   # GET /clientes/1
@@ -13,13 +17,14 @@ class ClientesController < ApplicationController
     respond_to do |format|
       format.html  
       format.json
-      format.pdf {render template: 'clientes/reporte', pdf: 'reporte'}
     end
   end
 
   # GET /clientes/new
   def new
     @cliente = Cliente.new
+
+
   end
 
   # GET /clientes/1/edit
