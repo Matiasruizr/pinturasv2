@@ -30,18 +30,7 @@ class FormulaPinturasController < ApplicationController
     @auxMateria1 = MateriasPrima.where(nombre: @formula_pintura.materia_prima_1).first
     @formula_pintura.costo_kg_materia_prima_1 =  @auxMateria1.precio.to_f
 
-    if @formula_pintura.materia_prima_2.empty? == false
-     @formula_pintura.costo_kg_materia_prima_2 = MateriasPrima.where(nombre: @formula_pintura.materia_prima_2.to_s).first.precio.to_f
-   end
-   if @formula_pintura.materia_prima_3.empty? == false
-     @formula_pintura.costo_kg_materia_prima_3 = MateriasPrima.where(nombre: @formula_pintura.materia_prima_3.to_s).first.precio.to_f
-   end
-   if @formula_pintura.materia_prima_4.empty? == false
-     @formula_pintura.costo_kg_materia_prima_4 = MateriasPrima.where(nombre: @formula_pintura.materia_prima_4.to_s).first.precio.to_f
-   end
-   if @formula_pintura.materia_prima_5.empty? == false
-     @formula_pintura.costo_kg_materia_prima_5 = MateriasPrima.where(nombre: @formula_pintura.materia_prima_5.to_s).first.precio.to_f
-   end
+
   end
 
   def costo_total_materia_prima!
