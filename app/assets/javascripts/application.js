@@ -36,6 +36,5 @@ $(document).ready(function(){
 
 
     // Validacion de formularios
-    
-    $(".materia_formula_edit select").val("No aplica");
+
 });

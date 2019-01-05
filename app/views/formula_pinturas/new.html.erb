@@ -1,5 +1,8 @@
 <h1>Crear nueva formula</h1>
 <p> Los decimales deben ingresarse con puntos (.), los porcentajes deben incluir solo el número, sin el simbolo '%' </p>
+<script> 
+    $(".materia_formula_edit select").val("No aplica");
+</script>
 <%= render 'form', formula_pintura: @formula_pintura %>
 
 <%= link_to 'Atras', formula_pinturas_path %>
