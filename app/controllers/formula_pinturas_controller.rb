@@ -281,7 +281,10 @@ class FormulaPinturasController < ApplicationController
   # PATCH/PUT /formula_pinturas/1
   # PATCH/PUT /formula_pinturas/1.json
   def update
-
+    costo_cada_materia_prima!
+    calculo_kg_formula!
+    costo_total_materia_prima!
+    
     respond_to do |format|
       if @formula_pintura.update(formula_pintura_params)
 
