@@ -303,6 +303,9 @@ h5{
     <td style="background: #4b87c7;color:white">Costo final kg</td>
     <td><%=  number_to_currency((calculo_total(@formula_pintura).to_i / kilos_total_formula_calc(@formula_pintura).to_i  ), options= {:precision => 0 ,  :delimiter => '.',:delimiter => '.' } ) %></td>
   </tr>
+  <tr>
+    <td><%= @formula_pintur %></td>
+  </tr>
 </table>
 
 
