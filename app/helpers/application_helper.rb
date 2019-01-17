@@ -4,7 +4,6 @@ module ApplicationHelper
 
     end
    
-  
 
     url = 'https://api.sbif.cl/api-sbifv3/recursos_api/dolar?apikey=f2b9f507ece8466a4720b632f70e8f543e01f771&formato=json'
     response = HTTParty.get(url, :verify => false )
@@ -23,61 +22,61 @@ module ApplicationHelper
         kilos_total_formula = formula_c.kg_materia_prima_1.to_i
 
         if formula_c.costo_kg_materia_prima_2.present?
-             kilos_total_formula =  kilos_total_formula + formula_c.kg_materia_prima_2.to_i
+             kilos_total_formula +=   formula_c.kg_materia_prima_2.to_i
          end
          if formula_c.costo_kg_materia_prima_3.present?
-            kilos_total_formula = kilos_total_formula +  formula_c.kg_materia_prima_3.to_i
+            kilos_total_formula +=  formula_c.kg_materia_prima_3.to_i
          end
          if formula_c.costo_kg_materia_prima_4.present?
-            kilos_total_formula = kilos_total_formula + formula_c.kg_materia_prima_4.to_i
+            kilos_total_formula += formula_c.kg_materia_prima_4.to_i
          end
          if formula_c.costo_kg_materia_prima_5.present?
-            kilos_total_formula = kilos_total_formula + formula_c.kg_materia_prima_5.to_i
+            kilos_total_formula += formula_c.kg_materia_prima_5.to_i
          end
          if formula_c.costo_kg_materia_prima_6.present?
-            kilos_total_formula = kilos_total_formula + formula_c.kg_materia_prima_6.to_i
+            kilos_total_formula += formula_c.kg_materia_prima_6.to_i
          end
          if formula_c.costo_kg_materia_prima_7.present?
-            kilos_total_formula = kilos_total_formula + formula_c.kg_materia_prima_7.to_i
+            kilos_total_formula += formula_c.kg_materia_prima_7.to_i
          end
          if formula_c.costo_kg_materia_prima_8.present?
-            kilos_total_formula = kilos_total_formula + formula_c.kg_materia_prima_8.to_i
+            kilos_total_formula += formula_c.kg_materia_prima_8.to_i
          end
          if formula_c.costo_kg_materia_prima_9.present?
-            kilos_total_formula = kilos_total_formula + formula_c.kg_materia_prima_9.to_i
+            kilos_total_formula += formula_c.kg_materia_prima_9.to_i
          end
          if formula_c.costo_kg_materia_prima_10.present?
-            kilos_total_formula = kilos_total_formula + formula_c.kg_materia_prima_10.to_i
+            kilos_total_formula += formula_c.kg_materia_prima_10.to_i
          end
          if formula_c.costo_kg_materia_prima_11.present?
-            kilos_total_formula = kilos_total_formula + formula_c.kg_materia_prima_11.to_i
+            kilos_total_formula += formula_c.kg_materia_prima_11.to_i
          end
          if formula_c.costo_kg_materia_prima_12.present?
-            kilos_total_formula = kilos_total_formula + formula_c.kg_materia_prima_12.to_i
+            kilos_total_formula += formula_c.kg_materia_prima_12.to_i
          end
          if formula_c.costo_kg_materia_prima_13.present?
-            kilos_total_formula = kilos_total_formula + formula_c.kg_materia_prima_13.to_i
+            kilos_total_formula += formula_c.kg_materia_prima_13.to_i
          end
          if formula_c.costo_kg_materia_prima_14.present?
-            kilos_total_formula = formula_c.kg_materia_prima_14.to_i
+            kilos_total_formula += formula_c.kg_materia_prima_14.to_i
          end
          if formula_c.costo_kg_materia_prima_15.present?
-            kilos_total_formula = kilos_total_formula + formula_c.kg_materia_prima_15.to_i
+            kilos_total_formula += formula_c.kg_materia_prima_15.to_i
          end
          if formula_c.costo_kg_materia_prima_16.present?
-            kilos_total_formula = kilos_total_formula + formula_c.kg_materia_prima_16.to_i
+            kilos_total_formula +=  formula_c.kg_materia_prima_16.to_i
          end
          if formula_c.costo_kg_materia_prima_17.present?
-            kilos_total_formula = kilos_total_formula + formula_c.kg_materia_prima_17.to_i
+            kilos_total_formula +=  formula_c.kg_materia_prima_17.to_i
          end
          if formula_c.costo_kg_materia_prima_18.present?
-            kilos_total_formula = kilos_total_formula + formula_c.kg_materia_prima_18.to_i
+            kilos_total_formula +=  formula_c.kg_materia_prima_18.to_i
          end
          if formula_c.costo_kg_materia_prima_19.present?
-            kilos_total_formula = kilos_total_formula + formula_c.kg_materia_prima_19.to_i
+            kilos_total_formula += formula_c.kg_materia_prima_19.to_i
          end
          if formula_c.costo_kg_materia_prima_20.present?
-            kilos_total_formula = kilos_total_formula + formula_c.kg_materia_prima_20.to_i
+            kilos_total_formula +=  formula_c.kg_materia_prima_20.to_i
          end
 
          return kilos_total_formula
@@ -126,7 +125,7 @@ module ApplicationHelper
             porcentaje_total_formula = porcentaje_total_formula + formula_c.porcentaje_materia_prima_13.to_i
          end
          if formula_c.costo_kg_materia_prima_14.present?
-            porcentaje_total_formula = formula_c.porcentaje_materia_prima_14.to_i
+            porcentaje_total_formula = porcentaje_total_formula + formula_c.porcentaje_materia_prima_14.to_i
          end
          if formula_c.costo_kg_materia_prima_15.present?
             porcentaje_total_formula = porcentaje_total_formula + formula_c.porcentaje_materia_prima_15.to_i
