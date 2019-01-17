@@ -12,7 +12,7 @@ module ApplicationHelper
     $valor  = response.parsed_response
 
     if $valor["CodigoHTTP"] == 404 
-        $dolar = 692
+        $dolar = 672
     else
         $dolar = $valor["Dolares"][0]["Valor"].to_f
     end
